@@ -1,0 +1,74 @@
+{
+  "filename": "/home/ricardo/code/aarno/amp/digiheals/chess_dataset/chess-aces/phase_3/eval/nethia/digiheals/unstripped/knock.so.bndb",
+  "md5": "9d71944d5c68d292399b8fdc28c0188b",
+  "userdata": {
+    "function-annotations": [
+      {
+        "faddr": "0xaf4",
+        "register-variable-introductions": [
+          {
+            "iaddr": "0xb60",
+            "name": "n",
+            "register": "r0",
+            "typename": "uint32_t"
+          },
+          {
+            "iaddr": "0xb58",
+            "mods": [
+              "ptrto"
+            ],
+            "name": "s",
+            "register": "r5",
+            "typename": "char const"
+          }
+        ]
+      }
+    ],
+    "function-entry-points": [
+      "0x854",
+      "0x860",
+      "0x874",
+      "0x880",
+      "0x88c",
+      "0x898",
+      "0x8a4",
+      "0x8b0",
+      "0x8bc",
+      "0x8c8",
+      "0x8d4",
+      "0x8e0",
+      "0x8ec",
+      "0x8f8",
+      "0x904",
+      "0x910",
+      "0x91c",
+      "0x928",
+      "0x934",
+      "0x940",
+      "0x94c",
+      "0x958",
+      "0x964",
+      "0x970",
+      "0x97c",
+      "0x988",
+      "0x9cc",
+      "0xa1c",
+      "0xaa8",
+      "0xaf4",
+      "0xbb8",
+      "0xf90",
+      "0x100c",
+      "0x1058",
+      "0x1060"
+    ],
+    "function-names": {
+      "0x898": "find_membership_link",
+      "0x8bc": "memcpy",
+      "0x8e0": "malloc",
+      "0x934": "sendnumericfmt",
+      "0x964": "strlen",
+      "0xaf4": "knock_member_exists"
+    },
+    "symbolic-addresses": {}
+  }
+}

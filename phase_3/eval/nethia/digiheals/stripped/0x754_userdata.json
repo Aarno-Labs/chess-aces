@@ -1,0 +1,503 @@
+{
+  "filename": "/home/ricardo/code/aarno/amp/digiheals/chess_dataset/chess-aces/phase_3/eval/nethia/digiheals/stripped/date.so.bndb",
+  "md5": "79524bbe95b41290fe0e0268128df9a8",
+  "userdata": {
+    "function-annotations": [
+      {
+        "faddr": "0x754",
+        "register-variable-introductions": [
+          {
+            "iaddr": "0x7ac",
+            "name": "t",
+            "register": "r0",
+            "typename": "time_t"
+          },
+          {
+            "iaddr": "0x7ac",
+            "name": "r1_1",
+            "register": "r1",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x800",
+            "name": "r2_2",
+            "register": "r2",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x908",
+            "name": "r2_2",
+            "register": "r2",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x818",
+            "name": "r2_2",
+            "register": "r2",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x7cc",
+            "name": "r3_2",
+            "register": "r3",
+            "typename": "uint32_t"
+          },
+          {
+            "iaddr": "0x904",
+            "name": "r3_2",
+            "register": "r3",
+            "typename": "uint32_t"
+          },
+          {
+            "iaddr": "0x814",
+            "name": "r3_2",
+            "register": "r3",
+            "typename": "uint32_t"
+          },
+          {
+            "iaddr": "0x830",
+            "name": "r3_3",
+            "register": "r3",
+            "typename": "uint32_t"
+          },
+          {
+            "iaddr": "0x9b8",
+            "name": "tm_year",
+            "register": "r3",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x9e8",
+            "name": "tm_mon",
+            "register": "r3",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x7e4",
+            "name": "r4_1",
+            "register": "r4",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x8fc",
+            "name": "r4_1",
+            "register": "r4",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x810",
+            "name": "r4_1",
+            "register": "r4",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0xa58",
+            "name": "r4_1",
+            "register": "r4",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0xa20",
+            "name": "r4_1",
+            "register": "r4",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x9d8",
+            "name": "r4_1",
+            "register": "r4",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0xae8",
+            "name": "r4_1",
+            "register": "r4",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0xb0c",
+            "name": "r4_1",
+            "register": "r4",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x810",
+            "name": "r4_1",
+            "register": "r4",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0xb0c",
+            "name": "r4_1",
+            "register": "r4",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0xb0c",
+            "name": "r4_1",
+            "register": "r4",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x810",
+            "name": "r4_1",
+            "register": "r4",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0xb0c",
+            "name": "r4_1",
+            "register": "r4",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x7dc",
+            "name": "r5_1",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x910",
+            "name": "r5_1",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0xa5c",
+            "name": "r5_1",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0xa24",
+            "name": "r5_1",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x9dc",
+            "name": "r5_1",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0xaec",
+            "name": "r5_1",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0xbcc",
+            "name": "r5_1",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0xbb0",
+            "name": "r5_1",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0xb94",
+            "name": "r5_1",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0xb78",
+            "name": "r5_1",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0xb5c",
+            "name": "r5_1",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0xb40",
+            "name": "r5_1",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0xb24",
+            "name": "r5_1",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0xce4",
+            "name": "r5_1",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0xd54",
+            "name": "r5_1",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0xd38",
+            "name": "r5_1",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0xd1c",
+            "name": "r5_1",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0xd00",
+            "name": "r5_1",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0xdc4",
+            "name": "r5_1",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0xda8",
+            "name": "r5_1",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0xd8c",
+            "name": "r5_1",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0xd70",
+            "name": "r5_1",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0xcac",
+            "name": "r5_1",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0xc90",
+            "name": "r5_1",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0xcc8",
+            "name": "r5_1",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0xb04",
+            "name": "r5_1",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0xc74",
+            "name": "r5_1",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0xc58",
+            "name": "r5_1",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0xc3c",
+            "name": "r5_1",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0xc20",
+            "name": "r5_1",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0xc04",
+            "name": "r5_1",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0xbe8",
+            "name": "r5_1",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0xf14",
+            "name": "r5_1",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0xef8",
+            "name": "r5_1",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0xedc",
+            "name": "r5_1",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0xec0",
+            "name": "r5_1",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0xea4",
+            "name": "r5_1",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0xe88",
+            "name": "r5_1",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0xe6c",
+            "name": "r5_1",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0xe50",
+            "name": "r5_1",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0xe34",
+            "name": "r5_1",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0xe18",
+            "name": "r5_1",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0xdfc",
+            "name": "r5_1",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0xde0",
+            "name": "r5_1",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x79c",
+            "mods": [
+              "ptrto"
+            ],
+            "name": "format",
+            "register": "r6",
+            "typename": "char"
+          }
+        ],
+        "stack-variable-introductions": [
+          {
+            "name": "t_1",
+            "offset": 1072,
+            "typename": "time_t"
+          },
+          {
+            "name": "var_440",
+            "offset": 1088,
+            "typename": "int32_t"
+          },
+          {
+            "name": "tm_mday",
+            "offset": 1084,
+            "typename": "int32_t"
+          },
+          {
+            "mods": [
+              "ptrto"
+            ],
+            "name": "format_str_1",
+            "offset": 1080,
+            "typename": "char const"
+          },
+          {
+            "mods": [
+              "ptrto"
+            ],
+            "name": "format_str_2",
+            "offset": 1076,
+            "typename": "char const"
+          },
+          {
+            "mods": [
+              "array:1024"
+            ],
+            "name": "request",
+            "offset": 1064,
+            "typename": "char"
+          }
+        ]
+      }
+    ],
+    "function-entry-points": [
+      "0x550",
+      "0x55c",
+      "0x570",
+      "0x57c",
+      "0x588",
+      "0x594",
+      "0x5a0",
+      "0x5ac",
+      "0x5b8",
+      "0x5c4",
+      "0x5d0",
+      "0x5dc",
+      "0x5e8",
+      "0x62c",
+      "0x67c",
+      "0x708",
+      "0x754",
+      "0xfe8",
+      "0x1050",
+      "0x1058",
+      "0x1060"
+    ],
+    "function-names": {
+      "0x57c": "snprintf",
+      "0x588": "memcpy",
+      "0x5a0": "__localtime64",
+      "0x5b8": "__time64",
+      "0x5c4": "sendnumericfmt",
+      "0x754": "cmd_date"
+    },
+    "symbolic-addresses": {}
+  }
+}

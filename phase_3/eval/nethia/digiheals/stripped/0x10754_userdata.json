@@ -1,0 +1,678 @@
+{
+  "filename": "/home/ricardo/code/aarno/amp/digiheals/chess_dataset/chess-aces/phase_3/eval/nethia/digiheals/stripped/date.so",
+  "md5": "79524bbe95b41290fe0e0268128df9a8",
+  "userdata": {
+    "function-annotations": [
+      {
+        "faddr": "0x10754",
+        "register-variable-introductions": [
+          {
+            "iaddr": "0x107ac",
+            "name": "r0_2",
+            "register": "r0",
+            "typename": "time_t"
+          },
+          {
+            "iaddr": "0x10b18",
+            "mods": [
+              "ptrto"
+            ],
+            "name": "r0_17",
+            "register": "r0",
+            "typename": "char"
+          },
+          {
+            "iaddr": "0x10b34",
+            "mods": [
+              "ptrto"
+            ],
+            "name": "r0_18",
+            "register": "r0",
+            "typename": "char"
+          },
+          {
+            "iaddr": "0x10b50",
+            "mods": [
+              "ptrto"
+            ],
+            "name": "r0_19",
+            "register": "r0",
+            "typename": "char"
+          },
+          {
+            "iaddr": "0x10b6c",
+            "mods": [
+              "ptrto"
+            ],
+            "name": "r0_20",
+            "register": "r0",
+            "typename": "char"
+          },
+          {
+            "iaddr": "0x10b88",
+            "mods": [
+              "ptrto"
+            ],
+            "name": "r0_21",
+            "register": "r0",
+            "typename": "char"
+          },
+          {
+            "iaddr": "0x10ba4",
+            "mods": [
+              "ptrto"
+            ],
+            "name": "r0_22",
+            "register": "r0",
+            "typename": "char"
+          },
+          {
+            "iaddr": "0x10bc0",
+            "mods": [
+              "ptrto"
+            ],
+            "name": "r0_23",
+            "register": "r0",
+            "typename": "char"
+          },
+          {
+            "iaddr": "0x10c84",
+            "mods": [
+              "ptrto"
+            ],
+            "name": "r0_30",
+            "register": "r0",
+            "typename": "char"
+          },
+          {
+            "iaddr": "0x10ca0",
+            "mods": [
+              "ptrto"
+            ],
+            "name": "r0_31",
+            "register": "r0",
+            "typename": "char"
+          },
+          {
+            "iaddr": "0x10cbc",
+            "mods": [
+              "ptrto"
+            ],
+            "name": "r0_32",
+            "register": "r0",
+            "typename": "char"
+          },
+          {
+            "iaddr": "0x10cd8",
+            "mods": [
+              "ptrto"
+            ],
+            "name": "r0_33",
+            "register": "r0",
+            "typename": "char"
+          },
+          {
+            "iaddr": "0x10cf4",
+            "mods": [
+              "ptrto"
+            ],
+            "name": "r0_34",
+            "register": "r0",
+            "typename": "char"
+          },
+          {
+            "iaddr": "0x10d10",
+            "mods": [
+              "ptrto"
+            ],
+            "name": "r0_35",
+            "register": "r0",
+            "typename": "char"
+          },
+          {
+            "iaddr": "0x10d2c",
+            "mods": [
+              "ptrto"
+            ],
+            "name": "r0_36",
+            "register": "r0",
+            "typename": "char"
+          },
+          {
+            "iaddr": "0x10d48",
+            "mods": [
+              "ptrto"
+            ],
+            "name": "r0_37",
+            "register": "r0",
+            "typename": "char"
+          },
+          {
+            "iaddr": "0x10d64",
+            "mods": [
+              "ptrto"
+            ],
+            "name": "r0_38",
+            "register": "r0",
+            "typename": "char"
+          },
+          {
+            "iaddr": "0x10d80",
+            "mods": [
+              "ptrto"
+            ],
+            "name": "r0_39",
+            "register": "r0",
+            "typename": "char"
+          },
+          {
+            "iaddr": "0x10d9c",
+            "mods": [
+              "ptrto"
+            ],
+            "name": "r0_40",
+            "register": "r0",
+            "typename": "char"
+          },
+          {
+            "iaddr": "0x10db8",
+            "mods": [
+              "ptrto"
+            ],
+            "name": "r0_41",
+            "register": "r0",
+            "typename": "char"
+          },
+          {
+            "iaddr": "0x107ac",
+            "name": "r1_1",
+            "register": "r1",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x10800",
+            "name": "r2_2",
+            "register": "r2",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x10908",
+            "name": "r2_2",
+            "register": "r2",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x10818",
+            "name": "r2_2",
+            "register": "r2",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x107cc",
+            "name": "r3_2",
+            "register": "r3",
+            "typename": "uint32_t"
+          },
+          {
+            "iaddr": "0x10904",
+            "name": "r3_2",
+            "register": "r3",
+            "typename": "uint32_t"
+          },
+          {
+            "iaddr": "0x10814",
+            "name": "r3_2",
+            "register": "r3",
+            "typename": "uint32_t"
+          },
+          {
+            "iaddr": "0x10830",
+            "name": "r3_3",
+            "register": "r3",
+            "typename": "uint32_t"
+          },
+          {
+            "iaddr": "0x109b8",
+            "name": "r3_8",
+            "register": "r3",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x109e8",
+            "name": "r3_9",
+            "register": "r3",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x107e4",
+            "name": "r4_1",
+            "register": "r4",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x108fc",
+            "name": "r4_1",
+            "register": "r4",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x10810",
+            "name": "r4_1",
+            "register": "r4",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x10a58",
+            "name": "r4_1",
+            "register": "r4",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x10a20",
+            "name": "r4_1",
+            "register": "r4",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x109d8",
+            "name": "r4_1",
+            "register": "r4",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x10ae8",
+            "name": "r4_1",
+            "register": "r4",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x10b0c",
+            "name": "r4_1",
+            "register": "r4",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x10810",
+            "name": "r4_1",
+            "register": "r4",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x10b0c",
+            "name": "r4_1",
+            "register": "r4",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x10b0c",
+            "name": "r4_1",
+            "register": "r4",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x10810",
+            "name": "r4_1",
+            "register": "r4",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x10b0c",
+            "name": "r4_1",
+            "register": "r4",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x107dc",
+            "name": "output_index",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x10910",
+            "name": "output_index",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x10a5c",
+            "name": "output_index",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x10a24",
+            "name": "output_index",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x109dc",
+            "name": "output_index",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x10aec",
+            "name": "output_index",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x10bcc",
+            "name": "output_index",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x10bb0",
+            "name": "output_index",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x10b94",
+            "name": "output_index",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x10b78",
+            "name": "output_index",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x10b5c",
+            "name": "output_index",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x10b40",
+            "name": "output_index",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x10b24",
+            "name": "output_index",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x10ce4",
+            "name": "output_index",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x10d54",
+            "name": "output_index",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x10d38",
+            "name": "output_index",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x10d1c",
+            "name": "output_index",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x10d00",
+            "name": "output_index",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x10dc4",
+            "name": "output_index",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x10da8",
+            "name": "output_index",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x10d8c",
+            "name": "output_index",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x10d70",
+            "name": "output_index",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x10cac",
+            "name": "output_index",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x10c90",
+            "name": "output_index",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x10cc8",
+            "name": "output_index",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x10b04",
+            "name": "output_index",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x10c74",
+            "name": "output_index",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x10c58",
+            "name": "output_index",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x10c3c",
+            "name": "output_index",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x10c20",
+            "name": "output_index",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x10c04",
+            "name": "output_index",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x10be8",
+            "name": "output_index",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x10f14",
+            "name": "output_index",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x10ef8",
+            "name": "output_index",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x10edc",
+            "name": "output_index",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x10ec0",
+            "name": "output_index",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x10ea4",
+            "name": "output_index",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x10e88",
+            "name": "output_index",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x10e6c",
+            "name": "output_index",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x10e50",
+            "name": "output_index",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x10e34",
+            "name": "output_index",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x10e18",
+            "name": "output_index",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x10dfc",
+            "name": "output_index",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x10de0",
+            "name": "output_index",
+            "register": "r5",
+            "typename": "int32_t"
+          },
+          {
+            "iaddr": "0x1079c",
+            "mods": [
+              "ptrto"
+            ],
+            "name": "r6_1",
+            "register": "r6",
+            "typename": "char"
+          }
+        ],
+        "stack-variable-introductions": [
+          {
+            "name": "var_430",
+            "offset": 1072,
+            "typename": "time_t"
+          },
+          {
+            "mods": [
+              "ptrto",
+              "array:1024"
+            ],
+            "name": "var_440",
+            "offset": 1088,
+            "typename": "char"
+          },
+          {
+            "name": "var_43c",
+            "offset": 1084,
+            "typename": "int32_t"
+          },
+          {
+            "mods": [
+              "ptrto"
+            ],
+            "name": "format",
+            "offset": 1080,
+            "typename": "char const"
+          },
+          {
+            "mods": [
+              "ptrto"
+            ],
+            "name": "format_1",
+            "offset": 1076,
+            "typename": "char const"
+          },
+          {
+            "mods": [
+              "array:1024"
+            ],
+            "name": "request",
+            "offset": 1064,
+            "typename": "char"
+          }
+        ]
+      }
+    ],
+    "function-entry-points": [
+      "0x10550",
+      "0x1055c",
+      "0x10570",
+      "0x1057c",
+      "0x10588",
+      "0x10594",
+      "0x105a0",
+      "0x105ac",
+      "0x105b8",
+      "0x105c4",
+      "0x105d0",
+      "0x105dc",
+      "0x105e8",
+      "0x1062c",
+      "0x1067c",
+      "0x10708",
+      "0x10754",
+      "0x10fe8",
+      "0x11050",
+      "0x11058",
+      "0x11060"
+    ],
+    "function-names": {
+      "0x1057c": "snprintf",
+      "0x10588": "memcpy",
+      "0x105a0": "__localtime64",
+      "0x105b8": "__time64",
+      "0x105c4": "sendnumericfmt",
+      "0x10754": "cmd_date"
+    },
+    "symbolic-addresses": {}
+  }
+}
