@@ -7,7 +7,7 @@
 
 ## Date: Stripped
 
-- BN thinks there's an 0x1000 offset for load address which CH doesn't agree with. Had to open with 
+- BN thinks there's an 0x1000 offset for load address which CH doesn't agree with. Had to open with
 Ctrl-Shift-O and switch to 0.
 - Function is at 0x754
 - Added prototype for function:
@@ -16,7 +16,7 @@ Ctrl-Shift-O and switch to 0.
 ```
 - Fixed prototypes for `__time64`, `__localtime`, and `sendnumericfmt`
 - Added definition for `struct tm` (man 3 tm)
-- Added variable names and fixed types for some local variables to match source, 
+- Added variable names and fixed types for some local variables to match source,
 including main output buffer, `char request[0x400]`
 
 - Lifting generation generates errors and warnings:
@@ -39,7 +39,7 @@ including main output buffer, `char request[0x400]`
 
 ## Knock: Stripped
 
-- BN thinks there's an 0x1000 offset for load address which CH doesn't agree with. Had to open with 
+- BN thinks there's an 0x1000 offset for load address which CH doesn't agree with. Had to open with
 Ctrl-Shift-O and switch to 0.
 - Function is at 0xaf4
 - Fixed prototype for `find_membership_link` and `sendnumericfmt`:
@@ -47,7 +47,7 @@ Ctrl-Shift-O and switch to 0.
 void sendnumericfmt(void* to, int32_t numeric, char const* fmt, ...)
 ```
 - Function requires actual struct types. I exported the types from BN using the unstripped binary,
-cleaned it up to avoid c99 issues and remove duplicate types, and saved it to `source/knock.so.h`. 
+cleaned it up to avoid c99 issues and remove duplicate types, and saved it to `source/knock.so.h`.
 Afterwards, I imported that header into the stripped bndb.
 - Got a lifting, woohoo!!
 - Patch is to remove [these lines](https://github.com/cromulencellc/chess-aces/blob/digiheals_samples/phase_3/eval/nethia/digiheals/source/knock.c#L55-L59):
@@ -60,5 +60,6 @@ Afterwards, I imported that header into the stripped bndb.
     n = strlen((*(reason)));
     memcpy(rtn_malloc__0, (*(reason)), n);
 ```
-  - I don't actually understand the bug. Here's the [PoV](https://github.com/cromulencellc/chess-aces/blob/master/phase_3/eval/nethia/pov_2/nethia.pov.2.py) and the [terse explanation](https://github.com/cromulencellc/chess-aces/tree/master/phase_3/eval/nethia#pov-2)
-- I can apply the patch which results in 7 replacements, but then patch analysis breaks. No obvious exception but the UI doesn't change.
+- Here's the [PoV](https://github.com/cromulencellc/chess-aces/blob/master/phase_3/eval/nethia/pov_2/nethia.pov.2.py) and the [terse explanation](https://github.com/cromulencellc/chess-aces/tree/master/phase_3/eval/nethia#pov-2)
+- Bug is caused by the first memcpy overwriting the `client->reason` pointer, and the 2nd one letting you write whatever you want to where `client->reason` is now pointing to
+- I can apply the patch which results in 7 replacements, and the analysis works. Patched binary is in stripped/knock.patched.so

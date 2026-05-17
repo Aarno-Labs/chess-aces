@@ -1,0 +1,188 @@
+{
+  "phase": "applypatches",
+  "events": [
+    {
+      "category": "success",
+      "event": "placed_patch_fragment",
+      "patchkind": "Replacement",
+      "logicalva": "0xb2c",
+      "details": {
+        "wrapper": null,
+        "payload": {
+          "offset": 2860,
+          "removed": 4,
+          "inserted": 4,
+          "offsethex": "0xb2c",
+          "vahex": "0xb2c"
+        },
+        "cases": []
+      },
+      "extras": {
+        "labeloffsets": null,
+        "destinations": null,
+        "trampoline_wrapper_bytes": "",
+        "compiled_code_bytes": "0000a0e1",
+        "c_code_lines": [
+          "asm(\"mov r0, r0\");"
+        ]
+      }
+    },
+    {
+      "category": "success",
+      "event": "placed_patch_fragment",
+      "patchkind": "Replacement",
+      "logicalva": "0xb34",
+      "details": {
+        "wrapper": null,
+        "payload": {
+          "offset": 2868,
+          "removed": 4,
+          "inserted": 4,
+          "offsethex": "0xb34",
+          "vahex": "0xb34"
+        },
+        "cases": []
+      },
+      "extras": {
+        "labeloffsets": null,
+        "destinations": null,
+        "trampoline_wrapper_bytes": "",
+        "compiled_code_bytes": "0000a0e1",
+        "c_code_lines": [
+          "asm(\"mov r0, r0\");"
+        ]
+      }
+    },
+    {
+      "category": "success",
+      "event": "placed_patch_fragment",
+      "patchkind": "Replacement",
+      "logicalva": "0xb40",
+      "details": {
+        "wrapper": null,
+        "payload": {
+          "offset": 2880,
+          "removed": 4,
+          "inserted": 4,
+          "offsethex": "0xb40",
+          "vahex": "0xb40"
+        },
+        "cases": []
+      },
+      "extras": {
+        "labeloffsets": null,
+        "destinations": null,
+        "trampoline_wrapper_bytes": "",
+        "compiled_code_bytes": "0000a0e1",
+        "c_code_lines": [
+          "asm(\"mov r0, r0\");"
+        ]
+      }
+    },
+    {
+      "category": "success",
+      "event": "placed_patch_fragment",
+      "patchkind": "Replacement",
+      "logicalva": "0xb44",
+      "details": {
+        "wrapper": null,
+        "payload": {
+          "offset": 2884,
+          "removed": 4,
+          "inserted": 4,
+          "offsethex": "0xb44",
+          "vahex": "0xb44"
+        },
+        "cases": []
+      },
+      "extras": {
+        "labeloffsets": null,
+        "destinations": null,
+        "trampoline_wrapper_bytes": "",
+        "compiled_code_bytes": "0000a0e1",
+        "c_code_lines": [
+          "asm(\"mov r0, r0\");"
+        ]
+      }
+    },
+    {
+      "category": "success",
+      "event": "placed_patch_fragment",
+      "patchkind": "Replacement",
+      "logicalva": "0xb54",
+      "details": {
+        "wrapper": null,
+        "payload": {
+          "offset": 2900,
+          "removed": 4,
+          "inserted": 4,
+          "offsethex": "0xb54",
+          "vahex": "0xb54"
+        },
+        "cases": []
+      },
+      "extras": {
+        "labeloffsets": null,
+        "destinations": null,
+        "trampoline_wrapper_bytes": "",
+        "compiled_code_bytes": "0000a0e1",
+        "c_code_lines": [
+          "asm(\"mov r0, r0\");"
+        ]
+      }
+    },
+    {
+      "category": "success",
+      "event": "placed_patch_fragment",
+      "patchkind": "Replacement",
+      "logicalva": "0xb60",
+      "details": {
+        "wrapper": null,
+        "payload": {
+          "offset": 2912,
+          "removed": 4,
+          "inserted": 4,
+          "offsethex": "0xb60",
+          "vahex": "0xb60"
+        },
+        "cases": []
+      },
+      "extras": {
+        "labeloffsets": null,
+        "destinations": null,
+        "trampoline_wrapper_bytes": "",
+        "compiled_code_bytes": "0000a0e1",
+        "c_code_lines": [
+          "asm(\"mov r0, r0\");"
+        ]
+      }
+    },
+    {
+      "category": "success",
+      "event": "placed_patch_fragment",
+      "patchkind": "Replacement",
+      "logicalva": "0xb70",
+      "details": {
+        "wrapper": null,
+        "payload": {
+          "offset": 2928,
+          "removed": 4,
+          "inserted": 4,
+          "offsethex": "0xb70",
+          "vahex": "0xb70"
+        },
+        "cases": []
+      },
+      "extras": {
+        "labeloffsets": null,
+        "destinations": null,
+        "trampoline_wrapper_bytes": "",
+        "compiled_code_bytes": "0000a0e1",
+        "c_code_lines": [
+          "asm(\"mov r0, r0\");"
+        ]
+      }
+    }
+  ],
+  "metadata": []
+}
