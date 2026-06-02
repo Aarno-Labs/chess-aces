@@ -2,6 +2,7 @@
 
 1. use-after-free in `handle__subscribe`. They took out a return at line 145.
 2. stack bufferoverflow in `handle__unsubscribe`. Official fix is to switch from stack to heap and realloc as needed.
+3. auth bypass/incorrect comparison in `mosquitto_unpwd_check_default`. Official fix is to switch from strncmp to strcmp.
 
 # Status
 
@@ -23,7 +24,7 @@ ERROR:AST conversion of constant true not yet supported at address 0x15540 [XXpr
 - Userdata generated
 - Lifting generates invalid C code
 1. When the patcher does scc it doesn't add a forward declaration:
-    ```
+```
 struct mosquitto__listener { 
    ...
    struct mosquitto__security_options security_options; 
@@ -43,3 +44,11 @@ like:
   ssa_R3_21 = ssa_R2_11[104]; // 0x158ac, LDR
   ssa_R2_11[104] = (ssa_R3_21 + 1); // 0x158b4, STR
 ```
+
+## mosquitto_unpwd_check_default
+
+- Userdata generated 
+- Warnings/errors in lifting. Same issue with `handle__unsubscribe` where CH doesn't handle accesses 
+to the global `db` . The function also has some nasty hash table lookup code.
+- It would be great if we could allow doing simple patches like "replace this function call with this 
+other function call" without requiring a full lifting generation.
