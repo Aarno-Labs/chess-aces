@@ -1,0 +1,91 @@
+~./phase_3/eval/kiaora: online MUD
+        CWE-118: Memory Corruption
+	Tough build with boost
+
+./phase_3/example/brickell: lighttpd
+	CWE-22/20/200: Improper Limitation of a Pathname
+	CWE-121: Stack-based Buffer Overflow
+	-SENT-
+
+./phase_3/eval/justison/README.md: modified nginx
+        CWE-124: Buffer Underflow
+	CWE-121: Stack-based Buffer Overflow
+
+./phase_3/eval/nethia: IRC server
+        CWE-787 Out of bounds write
+	CWE-123 Write-what-where condition
+
+./phase_2/eval/hackensack: implementation of the MQTT protocol.
+        CWE-121 Stack-based buffer overflow
+	subscribe to more that 10 topics
+
+        CWE-415 Double free
+        CWE-416 Use after free
+	-SENT-
+
+./phase_2/eval/pitsmoor: IRC Server
+        CWE-787 Out-of-bounds write
+	-SENT-
+
+./phase_2/eval/templeton: http server
+
+
+./phase_2/example/earnshaw: vsftpd
+        CWE-122: Heap-based Buffer Overflow
+
+./phase_3/example/cherry: cvs server (needs cvs directory)
+        CWE-415: Double Free
+	CWE-123: Write-what-where condition
+
+./phase_3/example/darwin: ftp server
+	Use after free
+
+./phase_2/eval/sedgewick: proftpd
+        CWE-787 Out-of-bounds write(stack)
+
+./phase_2/eval/olmstead: openldap 2.4.56
+        CWE-787: Out-of-bounds Write (snprintf stack-based overflow)
+
+./phase_2/eval/morton: MQTT IoT?
+        CWE-122: Heap-based Buffer Overflow
+	might be easy with topic
+
+
+
+
+# probably not useful
+./phase_2/eval/garfield: complicated parser
+        CWE-416: Use After Free
+
+
+# Not Useful
+./phase_2/eval/kensington
+
+./phase_2/example/dorchester
+
+./phase_2/example/arborway
+
+./phase_3/eval/grand
+
+./phase_3/eval/loquat
+
+./phase_2/example/cornhill
+
+./phase_2/example/fenway
+
+./phase_3/eval/holt: lighttpd
+        CWE-78: Improper Neutralization of Special Elements used in an OS Command
+	CWE 674: Uncontrolled Recursion
+
+./phase_3/eval/inagua/README: IRC server
+        CWE-416: Use After Free
+	Not really a use after free; something is set to NULL which causes confusion
+
+./phase_3/eval/morse: Javascript
+
+./phase_3/example/foster: MQ Server
+        CWE-170: Improper Null Termination
+	Ends up being information discloure
+
+./phase_3/example/alatka:
+	CWE 400 - Uncontrolled Resource Consumptionw
