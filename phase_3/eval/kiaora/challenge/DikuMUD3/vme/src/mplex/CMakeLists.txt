@@ -30,6 +30,9 @@ target_include_directories(mplex_objs
         PRIVATE . ${CMAKE_SOURCE_DIR}/vme/src
         PUBLIC ${CMAKE_SOURCE_DIR}/vme/include
         )
+# Cross-built Boost lives outside the default include path (/opt/boost-arm);
+# propagate its include dirs so the sources here can find Boost headers.
+target_link_libraries(mplex_objs PUBLIC Boost::headers Boost::system)
 
 add_executable(mplex main.cpp)
 target_compile_definitions(mplex PUBLIC LINUX POSIX MPLEX_COMPILE)

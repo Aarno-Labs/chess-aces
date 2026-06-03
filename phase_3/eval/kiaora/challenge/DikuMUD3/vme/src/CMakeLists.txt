@@ -116,6 +116,15 @@ target_compile_definitions(vme_objs PUBLIC DMSERVER LINUX POSIX)
 target_include_directories(vme_objs
         PRIVATE .
         PUBLIC ${CMAKE_SOURCE_DIR}/vme/include)
+# Propagate Boost include dirs (and link deps) to all sources in this object
+# library and to anything that links it. The cross-built Boost lives outside the
+# default system include path (/opt/boost-arm), so this is required for headers
+# such as <boost/format.hpp> and <boost/graph/adjacency_list.hpp> to be found.
+target_link_libraries(vme_objs PUBLIC
+        Boost::headers
+        Boost::filesystem
+        Boost::regex
+        Boost::system)
 
 add_executable(vme main.cpp)
 target_compile_definitions(vme PUBLIC DMSERVER LINUX POSIX)

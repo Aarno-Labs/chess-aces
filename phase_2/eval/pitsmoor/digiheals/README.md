@@ -22,3 +22,31 @@ WARNING:Reaching definition address 0x1ba54_clobber for variable R2  not found [
 global variables. There's a `bool Conf_CloakUserToNick` at 0x3a392 that gets access through a pointer 
 at 0x392ac which CH doesn't recognize as such, instead it generates its own global `int gv_0x392ac` and 
 then in the code `if (((*(gv_0x392ac)) != 0)) {`.
+
+---
+
+# EPL build (compile + smoke test)
+
+ARM32 (musl) rebuild of the full ngIRCd server via `docker compose build` (see
+`../../../digiheals/ARM32.md`). Output is byte-identical to the `ngircd` already
+in `stripped/`/`unstripped/` here, except for its embedded `__DATE__`/`__TIME__`
+build-timestamp ("Birth Date") string.
+
+Built binary: `ngircd` (both `stripped/` and `unstripped/`).
+
+## Build
+```
+cd ../../../digiheals/aarno && make arm-build-base   # one-time cross-compiler base image
+cd phase_2/eval/pitsmoor && docker compose build
+```
+- binary: `/home/challenge/ngircd/src/ngircd/ngircd`
+- runs under `qemu-arm -L /arm-linux-musleabi-cross/arm-linux-musleabi`
+- stripped copy via `arm-linux-musleabi-strip`
+
+## Smoke test (poller)
+```
+docker compose up -d ta3_pitsmoor
+docker compose up --abort-on-container-exit --exit-code-from ta3_pitsmoor_poller ta3_pitsmoor_poller
+docker compose down
+```
+Result: **PASS** — `[SUCCESS] All tests succeeded` (poller exit 0).

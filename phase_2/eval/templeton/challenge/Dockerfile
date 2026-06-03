@@ -1,18 +1,16 @@
-FROM chessexternal.apogee-research.com:5010/apogee_ta5/testbed_release/cs_base_phase_2:2020_11_16
+FROM arm-build-base
+
+RUN apt-get update && apt-get install -y build-essential qemu-user file autoconf automake pkg-config bison flex cmake php
+
+RUN rm /arm-linux-musleabi-cross/arm-linux-musleabi/lib/ld-musl-arm.so.1
+RUN cp /arm-linux-musleabi-cross/arm-linux-musleabi/lib/libc.so /arm-linux-musleabi-cross/arm-linux-musleabi/lib/ld-musl-arm.so.1
+
+ENV TOOLCHAIN=/arm-linux-musleabi-cross TARGET=arm-linux-musleabi SYSROOT=/arm-linux-musleabi-cross/arm-linux-musleabi PREFIX=/opt/arm-musl
+ENV PATH=$TOOLCHAIN/bin:$PATH
+ENV CC=$TARGET-gcc AR=$TARGET-ar RANLIB=$TARGET-ranlib STRIP=$TARGET-strip LD=$TARGET-ld
 
 ADD ./ /home/challenge
 ADD base_data /data
-
-RUN apt-get install php -y
-
-RUN chown -R chess:chess /home
-RUN chown -R root:chess /data
-RUN chmod 775 /data
-RUN chown root:chess /data/*
-RUN chmod 640 /data/*
-
-RUN mkdir /service
-RUN chown -R chess:chess /service
 
 ENV PORT=9999
 ENV HOST=challenge_container
@@ -23,11 +21,9 @@ RUN chmod 644 /token
 
 WORKDIR /home/challenge
 RUN make clean
-RUN make
+RUN make CC=arm-linux-musleabi-gcc TARGET=templeton.bin CFLAGS="-g -Wall -include sys/select.h" -j8
 
-RUN ls -al /data/
+# Verify the produced binary is an ARM 32-bit ELF
+RUN file build/templeton.bin && arm-linux-musleabi-readelf -h build/templeton.bin | grep -E 'Class|Machine'
 
-RUN ls -al /
-
-USER chess
-CMD /home/challenge/build/templeton.bin
+CMD qemu-arm -L /arm-linux-musleabi-cross/arm-linux-musleabi /home/challenge/build/templeton.bin

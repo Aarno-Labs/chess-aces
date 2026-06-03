@@ -63,6 +63,9 @@ target_include_directories(vmc_objs
         PRIVATE . ${CMAKE_SOURCE_DIR}/vme/src ${CMAKE_SOURCE_DIR}/vme/src/pp
         PUBLIC ${CMAKE_SOURCE_DIR}/vme/include
         )
+# Cross-built Boost lives outside the default include path (/opt/boost-arm);
+# propagate its include dirs so the sources here can find Boost headers.
+target_link_libraries(vmc_objs PUBLIC Boost::headers Boost::filesystem Boost::regex)
 
 # Add report files to clean target
 set_target_properties(vmc_objs

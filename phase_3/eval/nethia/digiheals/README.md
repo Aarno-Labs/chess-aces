@@ -63,3 +63,31 @@ Afterwards, I imported that header into the stripped bndb.
 - Here's the [PoV](https://github.com/cromulencellc/chess-aces/blob/master/phase_3/eval/nethia/pov_2/nethia.pov.2.py) and the [terse explanation](https://github.com/cromulencellc/chess-aces/tree/master/phase_3/eval/nethia#pov-2)
 - Bug is caused by the first memcpy overwriting the `client->reason` pointer, and the 2nd one letting you write whatever you want to where `client->reason` is now pointing to
 - I can apply the patch which results in 7 replacements, and the analysis works. Patched binary is in stripped/knock.patched.so
+
+---
+
+# EPL build (compile + smoke test)
+
+ARM32 (musl) rebuild of the full app + modules via `docker compose build` (see
+`../../../digiheals/ARM32.md`). Output is byte-identical to the binaries already
+in `stripped/`/`unstripped/` here, except `unrealircd`, which differs only in its
+embedded `__DATE__`/`__TIME__` build-timestamp string.
+
+Built binaries: `unrealircd`, `knock.so`, `date.so` (both `stripped/` and `unstripped/`).
+
+## Build
+```
+cd ../../../digiheals/aarno && make arm-build-base   # one-time cross-compiler base image
+cd phase_3/eval/nethia && docker compose build
+```
+- server:  `/root/unrealircd/bin/unrealircd`
+- modules: `/root/unrealircd/modules/{knock,date}.so`
+- stripped copies via `arm-linux-musleabi-strip`
+
+## Smoke test (poller)
+```
+docker compose up -d ta3_nethia
+docker compose up --abort-on-container-exit --exit-code-from ta3_nethia_poller ta3_nethia_poller
+docker compose down
+```
+Result: **PASS** — `[SUCCESS] All tests succeeded` (poller exit 0).

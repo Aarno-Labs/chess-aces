@@ -4,6 +4,17 @@ project(DikuMUD3)
 find_package(BISON)
 find_package(FLEX)
 
+# The generated flex scanners (vmclex.l / dillex.l) provide their own yywrap,
+# so the helper library libfl is not required. The arm-musl cross sysroot does
+# not ship libfl, which makes FindFLEX leave FL_LIBRARY=NOTFOUND and breaks the
+# generate step. Clear FLEX_LIBRARIES so nothing tries to link the missing lib.
+set(FLEX_LIBRARIES "")
+
+# Allow disabling the unit test targets. They pull in OpenSSL::Crypto and the
+# Boost unit_test_framework in ways that are not needed to build the MUD itself,
+# and are out of scope for the arm-musl cross build.
+option(BUILD_TESTS "Build the unit test targets" ON)
+
 if (NOT CMAKE_BUILD_TYPE)
     message(STATUS "Setting build type to 'Debug' as none was specified.")
     set(CMAKE_BUILD_TYPE Debug)
@@ -62,24 +73,31 @@ add_subdirectory(vme/zone)
 add_subdirectory(vme/etc)
 
 enable_testing()
-add_subdirectory(unit_tests)
+if (BUILD_TESTS)
+    add_subdirectory(unit_tests)
+endif ()
 
 # Run the unit tests, but dont fail the build because of them
 set(TEST_RUN_ARGS --log_level=message --no_result_code)
 # Add dependencies so that the tests run after everything and are last result on console
 add_custom_target(all_binaries ALL)
-add_dependencies(all_binaries
-        vme vmc mplex pp defcomp vmc_unit_tests pp_unit_tests mplex_unit_tests
-        defcomp_unit_tests vme_unit_tests zone_files dat_files color_files)
+if (BUILD_TESTS)
+    add_dependencies(all_binaries
+            vme vmc mplex pp defcomp vmc_unit_tests pp_unit_tests mplex_unit_tests
+            defcomp_unit_tests vme_unit_tests zone_files dat_files color_files)
 
-add_custom_command(TARGET all_binaries POST_BUILD
-        COMMENT "Running all unit tests"
-        COMMAND defcomp_unit_tests ${TEST_RUN_ARGS}
-        COMMAND pp_unit_tests ${TEST_RUN_ARGS}
-        COMMAND vmc_unit_tests ${TEST_RUN_ARGS}
-        COMMAND mplex_unit_tests ${TEST_RUN_ARGS}
-        COMMAND vme_unit_tests ${TEST_RUN_ARGS}
-        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}/vme/bin
-        WORKING_DIRECTORY
-        DEPENDS all_binaries
-        )
+    add_custom_command(TARGET all_binaries POST_BUILD
+            COMMENT "Running all unit tests"
+            COMMAND defcomp_unit_tests ${TEST_RUN_ARGS}
+            COMMAND pp_unit_tests ${TEST_RUN_ARGS}
+            COMMAND vmc_unit_tests ${TEST_RUN_ARGS}
+            COMMAND mplex_unit_tests ${TEST_RUN_ARGS}
+            COMMAND vme_unit_tests ${TEST_RUN_ARGS}
+            WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}/vme/bin
+            WORKING_DIRECTORY
+            DEPENDS all_binaries
+            )
+else ()
+    add_dependencies(all_binaries
+            vme vmc mplex pp defcomp zone_files dat_files color_files)
+endif ()

@@ -52,3 +52,39 @@ like:
 to the global `db` . The function also has some nasty hash table lookup code.
 - It would be great if we could allow doing simple patches like "replace this function call with this 
 other function call" without requiring a full lifting generation.
+
+---
+
+# EPL build (compile + smoke test)
+
+ARM32 (musl) rebuild of the full Mosquitto broker via `docker compose build`
+(see `../../../digiheals/ARM32.md`). Output is byte-identical to the `mosquitto`
+already in `stripped/`/`unstripped/` here.
+
+Built binary: `mosquitto` (both `stripped/` and `unstripped/`). The three bugs all
+live in this single broker binary — there is no per-function `.so`.
+
+## Build
+```
+cd ../../../digiheals/aarno && make arm-build-base   # one-time cross-compiler base image
+cd phase_2/eval/hackensack && docker compose build
+```
+- binary: `/opt/arm-musl/sbin/mosquitto` (also `/home/challenge/mosquitto-2.0.4/build/src/mosquitto`)
+- stripped copy via `arm-linux-musleabi-strip`
+
+### Launch-command fix
+For the broker (and thus the poller) to run, `challenge/Dockerfile`'s `CMD` must
+point at the cross-install path and run under qemu with the musl sysroot (the
+same pattern nethia/pitsmoor use):
+```
+CMD ["qemu-arm", "-L", "/arm-linux-musleabi-cross/arm-linux-musleabi", \
+     "/opt/arm-musl/sbin/mosquitto", "-c", "/data/mosquitto.conf"]
+```
+
+## Smoke test (poller)
+```
+docker compose up -d ta3_hackensack
+docker compose up --abort-on-container-exit --exit-code-from ta3_hackensack_poller ta3_hackensack_poller
+docker compose down
+```
+Result: **PASS** — `[SUCCESS] Poller completed!` (poller exit 0).

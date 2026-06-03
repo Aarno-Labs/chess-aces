@@ -17,7 +17,7 @@
 
 int check_reboot()
 {
-    long tc = 0;
+    time_t tc = 0;
     tm *t_info = nullptr;
     static int count = 12;
 

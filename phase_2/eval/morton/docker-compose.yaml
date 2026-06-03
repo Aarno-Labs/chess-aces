@@ -10,7 +10,7 @@ services:
         image: ta3_morton_server
         hostname: challenge_server
         build:
-            context: ./mqtt_broker/
+            context: ./challenge/
             dockerfile: Dockerfile
             network: host
         security_opt:
