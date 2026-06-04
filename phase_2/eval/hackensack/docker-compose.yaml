@@ -25,34 +25,34 @@ services:
         environment: &id002
         - HOST=challenge_container
         - PORT=1883
-    ta3_hackensack_pov_2_server:
-        image: ta3_hackensack_pov_2_server
-        build:
-            context: ./challenge/
-            dockerfile: Dockerfile-pov2
-            network: host
-        security_opt:
-        - apparmor:unconfined
-        networks:
-            cs_network: &id020
-                aliases:
-                - challenge_container
-        init: true
-        environment: &id021
-        - HOST=challenge_container
-        - PORT=1883
-    ta3_hackensack_ref_patch:
-        image: ta3_hackensack_ref_patch
-        build:
-            context: ./reference_patch/
-            dockerfile: Dockerfile
-            network: host
-        security_opt:
-        - apparmor:unconfined
-        networks:
-            cs_network: *id001
-        init: true
-        environment: *id002
+    # ta3_hackensack_pov_2_server:
+    #     image: ta3_hackensack_pov_2_server
+    #     build:
+    #         context: ./challenge/
+    #         dockerfile: Dockerfile-pov2
+    #         network: host
+    #     security_opt:
+    #     - apparmor:unconfined
+    #     networks:
+    #         cs_network: &id020
+    #             aliases:
+    #             - challenge_container
+    #     init: true
+    #     environment: &id021
+    #     - HOST=challenge_container
+    #     - PORT=1883
+    # ta3_hackensack_ref_patch:
+    #     image: ta3_hackensack_ref_patch
+    #     build:
+    #         context: ./reference_patch/
+    #         dockerfile: Dockerfile
+    #         network: host
+    #     security_opt:
+    #     - apparmor:unconfined
+    #     networks:
+    #         cs_network: *id001
+    #     init: true
+    #     environment: *id002
     ta3_hackensack_pov_1:
         image: ta3_hackensack_pov_1
         build:

@@ -1,4 +1,6 @@
-FROM chessexternal.apogee-research.com:5010/apogee_ta5/testbed_release/cs_base_phase_2:2020_11_16
+# FROM chessexternal.apogee-research.com:5010/apogee_ta5/testbed_release/cs_base_phase_2:2020_11_16
+FROM python:3.12
+
 
 COPY . /poller
 WORKDIR /poller

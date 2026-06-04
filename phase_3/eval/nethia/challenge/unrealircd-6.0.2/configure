@@ -7466,6 +7466,10 @@ pcre2_version="10.39"
 $as_echo "extracting PCRE2 regex library" >&6; }
 cur_dir=`pwd`
 cd extras
+
+{ $as_echo "$as_me:${as_lineno-$LINENO}: lahtinen: x$ac_cv_path_GUNZIP" >&5
+$as_echo "lahtinen: x$ac_cv_path_GUNZIP" >&6; }
+
 rm -rf pcre2-$pcre2_version pcre2
 if test "x$ac_cv_path_GUNZIP" = "x" ; then
 	tar xfz pcre2.tar.gz
@@ -7478,7 +7482,32 @@ fi
 { $as_echo "$as_me:${as_lineno-$LINENO}: result: configuring PCRE2 regex library" >&5
 $as_echo "configuring PCRE2 regex library" >&6; }
 cd pcre2-$pcre2_version
-./configure --enable-jit --enable-shared --prefix=$cur_dir/extras/pcre2 --libdir=$PRIVATELIBDIR || exit 1
+# ./configure --enable-jit --enable-shared --prefix=$cur_dir/extras/pcre2 --libdir=$PRIVATELIBDIR || exit 1
+./configure \
+  --host=arm-linux-musleabi \
+  --build="$(gcc -dumpmachine)" \
+  --prefix=$cur_dir/extras/pcre2 --libdir=$PRIVATELIBDIR \
+  --disable-static \
+  --enable-shared \
+  --enable-jit \
+  CC=arm-linux-musleabi-gcc \
+  CFLAGS="--sysroot=/arm-linux-musleabi-cross/arm-linux-musleabi -std=gnu11" \
+  LDFLAGS="--sysroot=/arm-linux-musleabi-cross/arm-linux-musleabi" || exit 1
+
+# rm -rf pcre2-$pcre2_version pcre2
+# pwd
+# if test "x$ac_cv_path_GUNZIP" = "x" ; then
+# 	tar xfz pcre2.tar.gz
+# else
+# 	cp pcre2.tar.gz pcre2.tar.gz.bak
+# 	gunzip -f pcre2.tar.gz
+# 	cp pcre2.tar.gz.bak pcre2.tar.gz
+# 	tar xf pcre2.tar
+# fi
+# { $as_echo "$as_me:${as_lineno-$LINENO}: result: configuring PCRE2 regex library" >&5
+# $as_echo "configuring PCRE2 regex library" >&6; }
+# cd pcre2-$pcre2_version
+# ./configure --enable-jit --enable-shared --prefix=$cur_dir/extras/pcre2 --libdir=$PRIVATELIBDIR || exit 1
 { $as_echo "$as_me:${as_lineno-$LINENO}: result: compiling PCRE2 regex library" >&5
 $as_echo "compiling PCRE2 regex library" >&6; }
 $ac_cv_prog_MAKER || exit 1
@@ -7718,7 +7747,16 @@ cd libsodium-$sodium_version
 save_cflags="$CFLAGS"
 CFLAGS="$orig_cflags"
 export CFLAGS
-./configure --prefix=$cur_dir/extras/sodium --libdir=$PRIVATELIBDIR --enable-shared --disable-static --enable-opt || exit 1
+./configure \
+  --host=arm-linux-musleabi \
+  --build="$(gcc -dumpmachine)" \
+  --prefix=$cur_dir/extras/sodium --libdir=$PRIVATELIBDIR \
+  --disable-shared \
+  CC=arm-linux-musleabi-gcc \
+  CFLAGS="--sysroot=/arm-linux-musleabi-cross/arm-linux-musleabi" \
+  LDFLAGS="--sysroot=/arm-linux-musleabi-cross/arm-linux-musleabi"
+
+# ./configure --prefix=$cur_dir/extras/sodium --libdir=$PRIVATELIBDIR --enable-shared --disable-static --enable-opt || exit 1
 CFLAGS="$save_cflags"
 { $as_echo "$as_me:${as_lineno-$LINENO}: result: compiling sodium resolver library" >&5
 $as_echo "compiling sodium resolver library" >&6; }
@@ -7841,7 +7879,15 @@ cd c-ares-$cares_version
 save_cflags="$CFLAGS"
 CFLAGS="$orig_cflags"
 export CFLAGS
-./configure --prefix=$cur_dir/extras/c-ares --libdir=$PRIVATELIBDIR --enable-shared --disable-tests || exit 1
+./configure \
+  --host=arm-linux-musleabi \
+  --build="$(gcc -dumpmachine)" \
+  --prefix=$cur_dir/extras/c-ares --libdir=$PRIVATELIBDIR --enable-shared --disable-tests \
+  CC=arm-linux-musleabi-gcc \
+  CFLAGS="--sysroot=/arm-linux-musleabi-cross/arm-linux-musleabi" \
+  LDFLAGS="--sysroot=/arm-linux-musleabi-cross/arm-linux-musleabi" || exit 1
+
+# ./configure --prefix=$cur_dir/extras/c-ares --libdir=$PRIVATELIBDIR --enable-shared --disable-tests || exit 1
 CFLAGS="$save_cflags"
 { $as_echo "$as_me:${as_lineno-$LINENO}: result: compiling c-ares resolver library" >&5
 $as_echo "compiling c-ares resolver library" >&6; }
@@ -7983,7 +8029,16 @@ cd jansson-$jansson_version
 save_cflags="$CFLAGS"
 CFLAGS="$orig_cflags"
 export CFLAGS
-./configure --prefix=$cur_dir/extras/jansson --libdir=$PRIVATELIBDIR --enable-shared --disable-static --enable-opt || exit 1
+./configure \
+  --host=arm-linux-musleabi \
+  --build="$(gcc -dumpmachine)" \
+  --prefix=$cur_dir/extras/jansson \
+  --libdir=$PRIVATELIBDIR --enable-shared --disable-static --enable-opt \
+  CC=arm-linux-musleabi-gcc \
+  CFLAGS="--sysroot=/arm-linux-musleabi-cross/arm-linux-musleabi" \
+  LDFLAGS="--sysroot=/arm-linux-musleabi-cross/arm-linux-musleabi"
+
+# ./configure --prefix=$cur_dir/extras/jansson --libdir=$PRIVATELIBDIR --enable-shared --disable-static --enable-opt || exit 1
 CFLAGS="$save_cflags"
 { $as_echo "$as_me:${as_lineno-$LINENO}: result: compiling jansson resolver library" >&5
 $as_echo "compiling jansson resolver library" >&6; }

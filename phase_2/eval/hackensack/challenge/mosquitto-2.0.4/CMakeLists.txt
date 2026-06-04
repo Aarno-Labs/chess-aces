@@ -47,6 +47,7 @@ else (WITH_TLS)
 	set (OPENSSL_INCLUDE_DIR "")
 endif (WITH_TLS)
 
+set(CMAKE_C_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -O2")
 
 option(WITH_UNIX_SOCKETS "Include Unix Domain Socket support?" ON)
 if (WITH_UNIX_SOCKETS AND NOT WIN32)

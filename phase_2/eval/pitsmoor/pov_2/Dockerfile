@@ -1,11 +1,12 @@
-#FROM python:3
-FROM chessexternal.apogee-research.com:5010/apogee_ta5/testbed_release/cs_base_phase_2:2020_11_16
+# #FROM python:3
+# FROM chessexternal.apogee-research.com:5010/apogee_ta5/testbed_release/cs_base_phase_2:2020_11_1
+FROM python:3.12
 
 ENV TERM=linux
 ENV TERMINFO=/etc/terminfo
 ENV TOOLS=/usr/bin/
 
-RUN ifconfig 
+# RUN ifconfig 
 RUN mkdir /pitsmoor-pov-2
 COPY . /pitsmoor-pov-2
 WORKDIR /pitsmoor-pov-2

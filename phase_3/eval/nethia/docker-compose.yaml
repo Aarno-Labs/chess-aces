@@ -28,18 +28,18 @@ services:
         - PORT=8000
         ports:
             - "6667"
-    ta3_nethia_ref_patch:
-        image: ta3_nethia_ref_patch
-        build:
-            context: ./reference_patch/
-            dockerfile: Dockerfile
-            network: host
-        security_opt:
-        - apparmor:unconfined
-        networks:
-            cs_network: *id001
-        init: true
-        environment: *id002
+    # ta3_nethia_ref_patch:
+    #     image: ta3_nethia_ref_patch
+    #     build:
+    #         context: ./reference_patch/
+    #         dockerfile: Dockerfile
+    #         network: host
+    #     security_opt:
+    #     - apparmor:unconfined
+    #     networks:
+    #         cs_network: *id001
+    #     init: true
+    #     environment: *id002
     ta3_nethia_pov_1:
         image: ta3_nethia_pov_1
         build:
