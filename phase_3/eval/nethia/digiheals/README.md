@@ -1,3 +1,8 @@
+> **Lift targets: the loadable modules `knock.so` and `date.so`** (each in `stripped/`
+> and `unstripped/`) — **not** the `unrealircd` server. The two bugs live in these
+> modules; `unrealircd` is just the host process that loads them. (`knock.patched.so`
+> is the patched `knock.so`.)
+
 # Bugs
 
 1. Failure to null terminate at date.c:76 This leads to a sprintf that leaks a stack address.

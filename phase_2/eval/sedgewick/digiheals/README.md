@@ -1,3 +1,6 @@
+> **Lift target: `proftpd`** (in `stripped/` and `unstripped/`). Single binary
+> (ProFTPD); both bugs (`xfer_rest`, `facts_opts_mlst`) are in this one binary.
+
 # Bugs
 
 1. Arithmetic Error, Information Disclosure (CWE-697: Incorrect Comparison,

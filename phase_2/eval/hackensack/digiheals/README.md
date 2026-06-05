@@ -1,3 +1,8 @@
+> **Lift target: `mosquitto`** (the broker, in `stripped/` and `unstripped/`). All
+> three bugs are broker-side functions in this single binary — there is no
+> per-function `.so`, and `libmosquitto`/the client is **not** the target here
+> (contrast morton, whose bug is in the client library).
+
 # Bugs
 
 1. use-after-free in `handle__subscribe`. They took out a return at line 145.

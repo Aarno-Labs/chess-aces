@@ -1,3 +1,6 @@
+> **Lift target: `ngircd`** (in `stripped/` and `unstripped/`). Single binary (the
+> ngIRCd IRC server).
+
 # Bugs
 
 1. Stack buffer overflow in `IRC_KICK`

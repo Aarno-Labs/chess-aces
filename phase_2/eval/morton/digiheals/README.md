@@ -1,3 +1,8 @@
+> **Lift target: `libmosquitto.so.2.0.9`** (in `stripped/` and `unstripped/`) — **not**
+> `mosquitto`. The bug is client-side, in the dynamically-linked library; the
+> `mosquitto` broker binary here is the **wrong** target. See "Resolution — wrong
+> binary" below.
+
 Can't find the vulnerable function. According to the top-level README.md there should be this call:
 ```actions.c
 ```c

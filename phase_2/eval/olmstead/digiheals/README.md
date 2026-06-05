@@ -1,3 +1,6 @@
+> **Lift target: `slapd`** (in `stripped/` and `unstripped/`). Single binary (the
+> OpenLDAP server); CWE-787 OOB write in `slap_mods_check`.
+
 # Bugs
 
 1. Out-of-bounds write in `slap_mods_check` (0x3ec9c)
