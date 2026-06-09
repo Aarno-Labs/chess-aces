@@ -11,7 +11,7 @@ quotations '"' when creating a php file which includes user input. This
 allows an attacker to inject arbitrary php code and leak the token file.
 In `escape_chars` at 0xba40.
 
-2. Out of bounds read, infoleak.
+2. Out of bounds read, infoleak. In `delete_invalid` at 0xa3ac
 
 # Status
 
@@ -57,3 +57,9 @@ Looking at the PD file it looks like the AST differencing has a bug, it's thinki
         "goto L0xbb38; }"
       ],
 ```
+
+## delete_invalid 
+
+- Lifting doesn't roundtrip. 
+- Lifting itself is very verbose, and CH's version of the lifting has some variables with no types
+(`?`) that I don't understand where they're coming from.
