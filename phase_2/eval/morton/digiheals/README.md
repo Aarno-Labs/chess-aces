@@ -15,11 +15,15 @@ if(mosquitto_validate_utf8(topic, (int)tlen)) {
 
 # Status
 
-- Library binary is x86_64, lolz
+- Library binary was x86_64; replaced with the cross-compiled ARM
+  `libmosquitto.so.2.0.10` extracted from the `ta3_morton_server` image
+  (mosquitto_src is v2.0.10; the injected `log__printf` overflow is identical).
+- `morton.h` is still the header generated from the old x86 2.0.9 lib — pending
+  regeneration from the ARM 2.0.10 lib.
 
 # Notes on Binaries
 
-Lift target: `libmosquitto.so.2.0.9` (in `stripped/` and `unstripped/`) — not
+Lift target: `libmosquitto.so.2.0.10` (in `stripped/` and `unstripped/`) — not
 `mosquitto`.
 
 The bug is client-side, in the dynamically-linked library; the
@@ -28,11 +32,13 @@ instead of `src/logging_mosq.c`.
 
 ### Correct lift target
 
-- `unstripped/libmosquitto.so.2.0.9` — built from `challenge/mosquitto_src`
-  (`make -C lib`, default `-ggdb` → DWARF) for header/type extraction.
-- `stripped/libmosquitto.so.2.0.9` — stripped twin, the lift target proper.
-- `morton.h` — regenerated from `unstripped/libmosquitto.so.2.0.9` (107/107
-  functions resolved).
+- `unstripped/libmosquitto.so.2.0.10` — the ARM build extracted from the
+  `ta3_morton_server` image (built from `challenge/mosquitto_src`, default
+  `-ggdb` → DWARF) for header/type extraction.
+- `stripped/libmosquitto.so.2.0.10` — stripped twin (stripped with the image's
+  own `arm-linux-musleabi-strip`), the lift target proper.
+- `morton.h` — still generated from the old x86 `libmosquitto.so.2.0.9` (107/107
+  functions resolved); pending regeneration from the ARM 2.0.10 lib.
 
 The bug: `log__printf` does `vsnprintf(mosq->log_string, len, fmt, va)` with
 `len = strlen(fmt) + 500`, writing into the fixed 600-byte `char log_string[MQTT_MAX_STR]`
