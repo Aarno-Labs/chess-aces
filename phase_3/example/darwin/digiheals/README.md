@@ -1,3 +1,11 @@
+> **Lift target: `proftpd`** (in `stripped/` and `unstripped/`). Single binary
+> (ProFTPD); all bugs are in this one binary. `auth_chkpass` 0x9297c,
+> `xfer_allo` 0x86bd0.
+>
+> Note: this is darwin's `proftpd`, a different challenge/build from sedgewick's
+> `proftpd` (same filename) — don't mix them up. `poll_ctrl` is inlined into
+> `pr_data_xfer` (0x42bfc) and has no symbol of its own.
+
 # Bugs 
 
 1. Improper input validation, Uninitialized variable, leads to auth bypass. In `auth_chkpass`.

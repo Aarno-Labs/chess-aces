@@ -1,8 +1,13 @@
+> **Lift target: `vsftpd`** (in `stripped/` and `unstripped/`). Single binary
+> (vsftpd); all bugs are in this one binary. `vsf_sysdep_check_auth` 0x1f554,
+> `handle_mdtm` 0x96d8.
+
 # Bugs 
 
 1. Auth bypass. `vsf_sysdep_check_auth` at 0x1f554
-2. Heap buffer overflow in `handle_mdtm` at 0x96d8
-3. Infoleak due to bad casting. XXX: Haven't looked at it.
+2. Heap buffer overflow in the NLST/LIST filename-filter path,
+   `vsf_filename_passes_filter` at 0xdc10
+3. Infoleak due to bad casting, in `handle_mdtm` at 0x96d8 (MDTM command handler)
 
 # Status
 

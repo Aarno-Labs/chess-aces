@@ -1,3 +1,11 @@
+> **Lift target: `cvs`** (in `stripped/` and `unstripped/`). Single binary (CVS
+> server); both bugs are in this one binary.
+>
+> Note: the addresses below are BinaryNinja's from a different load base. In the
+> shipped `cvs` the symbols sit ~0x10000 higher — `serve_directory` 0x66a3c,
+> `serve_sym` 0x6a510, `do_cvs_command` 0x68ae0. `dirswitch` is inlined into
+> `serve_directory` and has no symbol of its own.
+
 # Bugs
 
 1. Double free, arbitrary write. In `dirswitch` (0x56a3c)

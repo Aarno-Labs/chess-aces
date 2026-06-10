@@ -10,7 +10,9 @@ and `cConHook::Input`
 
 # Notes 
 
-Only `vme` and `mplex` binaries are in scope.
+Only `vme` and `mplex` are lift targets 
+Bugs 1 and 4 (`nanny_existing_pwd`, `circle_alias`) are in `vme`; bugs 2 and 3
+(`cConHook::IndentText`, `cConHook::AddInputChar`/`AddString`/`Input`) are in `mplex`.
 
 # Status 
 
