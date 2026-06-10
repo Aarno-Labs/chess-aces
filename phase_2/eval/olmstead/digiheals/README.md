@@ -1,5 +1,6 @@
-> **Lift target: `slapd`** (in `stripped/` and `unstripped/`). Single binary (the
-> OpenLDAP server); CWE-787 OOB write in `slap_mods_check`.
+> Lift targets: `slapd` (POV-1: CWE-787 OOB write in `slap_mods_check`) and
+> `libldap_r-2.4.so.2.11.4` (POV-2: auth bypass in `ldap_passwd_ss`). Both in
+> `stripped/` and `unstripped/`.
 
 # Bugs
 
@@ -25,4 +26,10 @@ struct slap_overinfo
 
 ## ldap_passwd_ss
 
-- Function it's in a library, not the main binary.
+- Function is in a library, not the main binary. `slapd` dynamically links the
+  reentrant build `libldap_r-2.4.so.2.11.4` (not `libldap`), and `ldap_passwd_ss`
+  is the one the server actually loads from there — so that lib is the POV-2 lift
+  target.
+- Now shipped here as `unstripped/` + `stripped/libldap_r-2.4.so.2.11.4` (ARM
+  32-bit, DWARF present, exports `ldap_passwd_ss`), extracted from the
+  `ta3_olmstead` image.
