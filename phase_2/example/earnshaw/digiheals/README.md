@@ -1,8 +1,8 @@
 # Bugs 
 
 1. Auth bypass. `vsf_sysdep_check_auth` at 0x1f554
-2. Heap buffer overflow. 
-3. Infoleak due to bad casting.
+2. Heap buffer overflow in `handle_mdtm` at 0x96d8
+3. Infoleak due to bad casting. XXX: Haven't looked at it.
 
 # Status
 
@@ -22,3 +22,7 @@ ssa_R3_4 = (*(ssa_R3_3)); // Not a pointer, can't deref
 ```
 The weirdest part is that the global's address doesn't match `tunable_check_shell` so I have no 
 clue what is going on.
+
+## handle_mdtm
+
+- Types did not come through on the DWARF info and doing it by hand is too much of a pain.
