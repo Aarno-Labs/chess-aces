@@ -23,12 +23,10 @@ if(mosquitto_validate_utf8(topic, (int)tlen)) {
 
 # Notes on Binaries
 
-Lift target: `libmosquitto.so.2.0.10` (in `stripped/` and `unstripped/`) — not
-`mosquitto`.
+Lift target: `libmosquitto.so.2.0.10` (in `stripped/` and `unstripped/`).
 
-The bug is client-side, in the dynamically-linked library; the
- `mosquitto` broker binary has its own logging functions (`src/logging.c`)
-instead of `src/logging_mosq.c`.
+The bug is client-side, in the dynamically-linked library. The `mosquitto` broker
+is not a lift target and is no longer shipped here.
 
 ### Correct lift target
 
@@ -48,22 +46,12 @@ exceeds 600 bytes is the UTF-8 topic error in `lib/actions.c` (reached via
 `log_string` into the adjacent `userdata` / `on_connect` function pointer. CWE-122.
 The fix (`reference_patch/vulnerability.patch`) heap-allocates the buffer instead.
 
-## Server binary (not vulnerable)
-
-The binary `unstripped/mosquitto` / `stripped/mosquitto` is the
-mosquitto broker daemon:
-
-- mosquitto has two functions named `log__printf`: the broker's (`src/logging.c`)
-  and libmosquitto's (`lib/logging_mosq.c`). The broker binary only contains the
-  former — which is why the one found here is the `src/logging.c` version and the
-  UTF-8 string is absent.
-- The top-level README says the vulnerability is injected client-side only, and
-  the client (`mosquitto_sub`, the `Thermometer-1` IoT thermometer) links
-  libmosquitto dynamically. So the vulnerable `log__printf`, the `actions.c`
-  publish path, and the UTF-8 error string all compile into
-  `libmosquitto.so.2.0.9`, not into the `mosquitto_sub` executable and not
-  into the broker.
-
-Verified: the UTF-8 string and the vulnerable `log__printf` are present only in
-`libmosquitto.so.2.0.9` (the `pov/lib` and `poller/lib` copies), absent from the
-broker and the client executable.
+Verified: the UTF-8 error string and the vulnerable `log__printf` are present in
+the ARM `libmosquitto.so.2.0.10` lift target (both `stripped/` and `unstripped/`).
+The bug is injected client-side only: the `Thermometer-1` IoT thermometer client
+(`mosquitto_sub`) links libmosquitto dynamically, so the vulnerable `log__printf`,
+the `actions.c` publish path, and the UTF-8 error string all compile into the
+shared library — not into the `mosquitto_sub` executable and not into the broker
+(whose `src/logging.c` `log__printf` has no UTF-8 path). The deployed client lib
+under `pov/lib` and `poller/lib` is the older x86 `libmosquitto.so.2.0.9` and
+carries the identical injected bug.
