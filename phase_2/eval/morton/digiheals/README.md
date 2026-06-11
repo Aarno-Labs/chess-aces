@@ -1,10 +1,10 @@
 # Bug
 
-* Heap buffer overflow in `log__printf`.
+* Heap buffer overflow in `log__printf` in libmosquitto.so.2.0.10.
 
 ## Details
 
-This is the call with a string that is too long:
+This is the call with a string that is too long inside of  `mosquitto_publish_v5` at 0x4754 in libmosquitto.so.2.0.10:
 ```actions.c
 ```c
 if(mosquitto_validate_utf8(topic, (int)tlen)) {
@@ -13,38 +13,14 @@ if(mosquitto_validate_utf8(topic, (int)tlen)) {
 }
 ```
 
+`log__printf` is in `reference_patch/mosquitto_src/lib/logging_mosq.c` (there's another version of it that 
+only applies to the server side of things)
+
 # Status
 
-- `morton.h` is still the header generated from the old x86 2.0.9 lib — pending
-  regeneration from the ARM 2.0.10 lib.
-
-# Notes on Binaries
-
-
-# Correct lift target
-
-- `unstripped/libmosquitto.so.2.0.10` — the ARM binary built from `challenge/mosquitto_src`, default
-  `-ggdb` → DWARF) for header/type extraction.
-- `stripped/libmosquitto.so.2.0.10` — stripped twin, the lift target proper.
-- `morton.h` — still generated from the old x86 `libmosquitto.so.2.0.9` (107/107
-  functions resolved); pending regeneration from the ARM 2.0.10 lib.
-
-# Vulnerability
-
-The bug: `log__printf` does `vsnprintf(mosq->log_string, len, fmt, va)` with
-`len = strlen(fmt) + 500`, writing into the fixed 600-byte `char log_string[MQTT_MAX_STR]`
-field of `struct mosquitto` (`lib/mosquitto_internal.h`). The only call site that
-exceeds 600 bytes is the UTF-8 topic error in `lib/actions.c` (reached via
-`mosquitto_publish`), so a publish to a >500-byte invalid-UTF-8 topic overflows
-`log_string` into the adjacent `userdata` / `on_connect` function pointer. CWE-122.
-The fix (`reference_patch/vulnerability.patch`) heap-allocates the buffer instead.
-
-Verified: the UTF-8 error string and the vulnerable `log__printf` are present in
-the ARM `libmosquitto.so.2.0.10` lift target (both `stripped/` and `unstripped/`).
-The bug is injected client-side only: the `Thermometer-1` IoT thermometer client
-(`mosquitto_sub`) links libmosquitto dynamically, so the vulnerable `log__printf`,
-the `actions.c` publish path, and the UTF-8 error string all compile into the
-shared library — not into the `mosquitto_sub` executable and not into the broker
-(whose `src/logging.c` `log__printf` has no UTF-8 path). The deployed client lib
-under `pov/lib` and `poller/lib` is the older x86 `libmosquitto.so.2.0.9` and
-carries the identical injected bug.
+- The source patch is to create a local buffer that is malloc'ed and use that for the logging. Not sure if 
+we can support that.
+- Lifting fails with:
+```
+chkx:ERROR:BL: Indirect call not yet handled at address 0x8538 [ARMCallOpcode:293] [ch:866]
+```

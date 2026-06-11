@@ -1,7 +1,7 @@
-/* Auto-generated from libmosquitto.so.2.0.9 */
+/* Auto-generated from /home/ricardo/code/aarno/amp/digiheals/chess-aces/phase_2/eval/morton/digiheals/unstripped/libmosquitto.so.2.0.10 */
 /* Self-contained: requires no system headers. */
-#ifndef LIBMOSQUITTO_SO_2_0_9_H
-#define LIBMOSQUITTO_SO_2_0_9_H
+#ifndef LIBMOSQUITTO_SO_2_0_10_H
+#define LIBMOSQUITTO_SO_2_0_10_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -9,60 +9,71 @@ extern "C" {
 
 /* ── enums ───────────────────────────────────────────────── */
 
-enum __anon_0x00017bc3 {
-    _ISupper = 256,
-    _ISlower = 512,
-    _ISalpha = 1024,
-    _ISdigit = 2048,
-    _ISxdigit = 4096,
-    _ISspace = 8192,
-    _ISprint = 16384,
-    _ISgraph = 32768,
-    _ISblank = 1,
-    _IScntrl = 2,
-    _ISpunct = 4,
-    _ISalnum = 8,
-};
-
-enum __anon_0x00019aaf {
-    IPPROTO_IP = 0,
-    IPPROTO_ICMP = 1,
-    IPPROTO_IGMP = 2,
-    IPPROTO_IPIP = 4,
-    IPPROTO_TCP = 6,
-    IPPROTO_EGP = 8,
-    IPPROTO_PUP = 12,
-    IPPROTO_UDP = 17,
-    IPPROTO_IDP = 22,
-    IPPROTO_TP = 29,
-    IPPROTO_DCCP = 33,
-    IPPROTO_IPV6 = 41,
-    IPPROTO_RSVP = 46,
-    IPPROTO_GRE = 47,
-    IPPROTO_ESP = 50,
-    IPPROTO_AH = 51,
-    IPPROTO_MTP = 92,
-    IPPROTO_BEETPH = 94,
-    IPPROTO_ENCAP = 98,
-    IPPROTO_PIM = 103,
-    IPPROTO_COMP = 108,
-    IPPROTO_SCTP = 132,
-    IPPROTO_UDPLITE = 136,
-    IPPROTO_MPLS = 137,
-    IPPROTO_RAW = 255,
-    IPPROTO_MAX = 256,
-};
-
-enum __socket_type {
-    SOCK_STREAM = 1,
-    SOCK_DGRAM = 2,
-    SOCK_RAW = 3,
-    SOCK_RDM = 4,
-    SOCK_SEQPACKET = 5,
-    SOCK_DCCP = 6,
-    SOCK_PACKET = 10,
-    SOCK_CLOEXEC = 524288,
-    SOCK_NONBLOCK = 2048,
+enum isa_feature {
+    isa_nobit = 0,
+    isa_bit_quirk_vlldm = 1,
+    isa_bit_fp16fml = 2,
+    isa_bit_mve = 3,
+    isa_bit_cmse = 4,
+    isa_bit_quirk_armv6kz = 5,
+    isa_bit_dotprod = 6,
+    isa_bit_crc32 = 7,
+    isa_bit_xscale = 8,
+    isa_bit_vfpv2 = 9,
+    isa_bit_vfpv3 = 10,
+    isa_bit_vfpv4 = 11,
+    isa_bit_lpae = 12,
+    isa_bit_armv7em = 13,
+    isa_bit_fp16 = 14,
+    isa_bit_adiv = 15,
+    isa_bit_fp_d32 = 16,
+    isa_bit_be8 = 17,
+    isa_bit_fp16conv = 18,
+    isa_bit_thumb2 = 19,
+    isa_bit_crypto = 20,
+    isa_bit_mp = 21,
+    isa_bit_sec = 22,
+    isa_bit_sb = 23,
+    isa_bit_bf16 = 24,
+    isa_bit_predres = 25,
+    isa_bit_armv4 = 26,
+    isa_bit_quirk_cm3_ldrd = 27,
+    isa_bit_smallmul = 28,
+    isa_bit_armv5t = 29,
+    isa_bit_armv8_1m_main = 30,
+    isa_bit_armv6 = 31,
+    isa_bit_thumb = 32,
+    isa_bit_quirk_no_asmcpu = 33,
+    isa_bit_armv7 = 34,
+    isa_bit_armv8 = 35,
+    isa_bit_i8mm = 36,
+    isa_bit_fp_dbl = 37,
+    isa_bit_armv5te = 38,
+    isa_bit_fpv5 = 39,
+    isa_bit_iwmmxt2 = 40,
+    isa_bit_notm = 41,
+    isa_bit_cdecp0 = 42,
+    isa_bit_cdecp1 = 43,
+    isa_bit_cdecp2 = 44,
+    isa_bit_cdecp3 = 45,
+    isa_bit_iwmmxt = 46,
+    isa_bit_cdecp4 = 47,
+    isa_bit_cdecp5 = 48,
+    isa_bit_cdecp6 = 49,
+    isa_bit_cdecp7 = 50,
+    isa_bit_mve_float = 51,
+    isa_bit_armv8_1 = 52,
+    isa_bit_armv8_2 = 53,
+    isa_bit_armv8_3 = 54,
+    isa_bit_tdiv = 55,
+    isa_bit_armv8_4 = 56,
+    isa_bit_armv8_5 = 57,
+    isa_bit_armv8_6 = 58,
+    isa_bit_neon = 59,
+    isa_bit_quirk_no_volatile_ce = 60,
+    isa_bit_armv6k = 61,
+    isa_bit_vfp_base = 62,
+    isa_num_bits = 63,
 };
 
 enum mosq_err_t {
@@ -118,11 +129,6 @@ enum mosq_opt_t {
     MOSQ_OPT_TCP_NODELAY = 11,
     MOSQ_OPT_BIND_ADDRESS = 12,
     MOSQ_OPT_TLS_USE_OS_CERTS = 13,
-};
-
-enum mosquitto__keyform {
-    mosq_k_pem = 0,
-    mosq_k_engine = 1,
 };
 
 enum mosquitto__protocol {
@@ -282,80 +288,108 @@ enum mqtt5_return_codes {
 
 /* ── forward declarations ────────────────────────────────── */
 
-struct EDIPartyName_st;
-struct GENERAL_NAME_st;
-struct _IO_FILE;
-union __anon_0x000001e7;
-union __anon_0x00001e5a;
-union __anon_0x0000298e;
-union __anon_0x00003a40;
-union __anon_0x00004f2d;
-union __anon_0x00005980;
-union __anon_0x00006b74;
-union __anon_0x000075c7;
-union __anon_0x00007af2;
-union __anon_0x00008758;
-union __anon_0x0000904d;
-union __anon_0x00009aa0;
-union __anon_0x0000a015;
-union __anon_0x0000aa68;
-union __anon_0x0000b088;
-union __anon_0x0000bafa;
-union __anon_0x0000c291;
-union __anon_0x0000cd03;
-union __anon_0x0000d5c2;
-union __anon_0x0000e034;
-union __anon_0x0000e7c6;
-union __anon_0x0000f238;
-union __anon_0x0000f977;
-union __anon_0x000103d0;
-union __anon_0x00010b10;
-union __anon_0x00011563;
-union __anon_0x00011c2c;
-union __anon_0x00013186;
-struct __anon_0x00014040;
-union __anon_0x0001430d;
-union __anon_0x00015d1c;
-union __anon_0x000169f1;
-union __anon_0x000183a9;
-union __anon_0x00019751;
-union __anon_0x00019b67;
-union __anon_0x0001cb9c;
-union __anon_0x0001f5eb;
-union __anon_0x00020e37;
-union __anon_0x00023154;
-union __anon_0x00023ba7;
-union __anon_0x000241e7;
-union __anon_0x00024cef;
-union __anon_0x00025822;
-union __anon_0x00026275;
-union __anon_0x000268ce;
-union __anon_0x00027321;
-union __anon_0x00028091;
-union __anon_0x00028ba0;
-union __anon_0x00029685;
-union __anon_0x0002a0de;
-union __anon_0x0002a8cc;
-union __anon_0x0002b325;
-union __anon_0x0002b908;
-union __anon_0x0002bbf6;
-union __anon_0x0002c866;
-union __anon_0x0002d430;
-union __anon_0x0002e60b;
-union __anon_0x0002f818;
-union __anon_0x0002fb06;
-union __anon_0x0002fd67;
-union __anon_0x0002ff9f;
-union __anon_0x00031675;
-union __anon_0x00032297;
-union __anon_0x000332ad;
-union __anon_0x00033d07;
-struct __pthread_internal_list;
-struct __pthread_mutex_s;
-struct __va_list_tag;
+union __anon_0x000002b3;
+struct __anon_0x00000321;
+union __anon_0x00000c71;
+union __anon_0x00001526;
+struct __anon_0x00001594;
+union __anon_0x000023c9;
+struct __anon_0x0000243a;
+union __anon_0x00002cba;
+union __anon_0x000035b1;
+struct __anon_0x0000361f;
+union __anon_0x00003e98;
+union __anon_0x00004252;
+struct __anon_0x000042c3;
+union __anon_0x00004d48;
+union __anon_0x000052ad;
+struct __anon_0x0000531b;
+union __anon_0x00005b94;
+union __anon_0x00005f6b;
+struct __anon_0x00005fdc;
+union __anon_0x00006855;
+union __anon_0x00006c52;
+struct __anon_0x00006cc3;
+union __anon_0x00007559;
+union __anon_0x00007a43;
+struct __anon_0x00007ab4;
+union __anon_0x00008351;
+union __anon_0x000088c9;
+struct __anon_0x0000893a;
+union __anon_0x000091d0;
+union __anon_0x000096e1;
+struct __anon_0x00009752;
+union __anon_0x00009fe8;
+union __anon_0x0000a4d6;
+struct __anon_0x0000a547;
+union __anon_0x0000adc7;
+union __anon_0x0000b296;
+struct __anon_0x0000b307;
+union __anon_0x0000bb80;
+union __anon_0x0000c07f;
+struct __anon_0x0000c0ed;
+union __anon_0x0000cfb7;
+struct __anon_0x0000d028;
+struct __anon_0x0000dc23;
+union __anon_0x0000de34;
+struct __anon_0x0000dea5;
+union __anon_0x0000ee7a;
+struct __anon_0x0000eeeb;
+union __anon_0x0000f9fc;
+struct __anon_0x000105f5;
+union __anon_0x0001061d;
+struct __anon_0x0001068b;
+union __anon_0x0001163e;
+union __anon_0x000117ae;
+struct __anon_0x0001181f;
+union __anon_0x00012bc6;
+struct __anon_0x00012c34;
+union __anon_0x000143e5;
+struct __anon_0x00014456;
+union __anon_0x00015331;
+struct __anon_0x0001539f;
+union __anon_0x00015d06;
+union __anon_0x00016ddd;
+struct __anon_0x00016e4e;
+union __anon_0x000176c7;
+union __anon_0x00017b47;
+struct __anon_0x00017bb8;
+union __anon_0x000184e4;
+union __anon_0x00018af8;
+struct __anon_0x00018b69;
+union __anon_0x000193e9;
+union __anon_0x0001985c;
+struct __anon_0x000198cd;
+union __anon_0x0001a146;
+union __anon_0x0001a824;
+struct __anon_0x0001a895;
+union __anon_0x0001b1c8;
+union __anon_0x0001b853;
+struct __anon_0x0001b8c4;
+union __anon_0x0001c144;
+union __anon_0x0001c67e;
+struct __anon_0x0001c6ef;
+union __anon_0x0001cf68;
+union __anon_0x0001d2cb;
+union __anon_0x0001d375;
+struct __anon_0x0001d3e6;
+union __anon_0x0001de1c;
+union __anon_0x0001e3f4;
+struct __anon_0x0001e462;
+union __anon_0x0001f143;
+struct __anon_0x0001f1a5;
+union __anon_0x0001f1cb;
+struct __anon_0x0001f23d;
+union __anon_0x00020432;
+struct __anon_0x000204a3;
+union __anon_0x00020d1c;
+union __anon_0x00021633;
+struct __anon_0x000216a1;
+union __anon_0x00021f1a;
+struct __sigset_t;
+struct __va_list;
 struct addrinfo;
-struct asn1_string_st;
-struct asn1_type_st;
+struct fbit_implication;
 struct in6_addr;
 struct in_addr;
 struct libmosquitto_tls;
@@ -368,7 +402,6 @@ struct mosquitto_message_all;
 struct mosquitto_msg_data;
 struct mqtt5__property;
 struct mqtt__string;
-struct otherName_st;
 struct sockaddr;
 struct sockaddr_in;
 struct sockaddr_in6;
@@ -380,23 +413,235 @@ struct will_delay_list;
 
 /* ── typedefs, structs & unions (dependency-ordered) ──────── */
 
-struct __pthread_internal_list {
-    struct __pthread_internal_list * __prev;
-    struct __pthread_internal_list * __next;
+union __anon_0x000002b3 {
+    int __i[6];
+    volatile int __vi[6];
+    volatile void * __p[6];
 };
 
-struct __va_list_tag {
-    unsigned int gp_offset;
-    unsigned int fp_offset;
-    void * overflow_arg_area;
-    void * reg_save_area;
+union __anon_0x00001526 {
+    int __i[6];
+    volatile int __vi[6];
+    volatile void * __p[6];
 };
 
-struct asn1_string_st {
-    int length;
-    int type;
-    unsigned char * data;
-    long int flags;
+union __anon_0x000023c9 {
+    int __i[6];
+    volatile int __vi[6];
+    volatile void * __p[6];
+};
+
+union __anon_0x000035b1 {
+    int __i[6];
+    volatile int __vi[6];
+    volatile void * __p[6];
+};
+
+union __anon_0x00004252 {
+    int __i[6];
+    volatile int __vi[6];
+    volatile void * __p[6];
+};
+
+union __anon_0x000052ad {
+    int __i[6];
+    volatile int __vi[6];
+    volatile void * __p[6];
+};
+
+union __anon_0x00005f6b {
+    int __i[6];
+    volatile int __vi[6];
+    volatile void * __p[6];
+};
+
+union __anon_0x00006c52 {
+    int __i[6];
+    volatile int __vi[6];
+    volatile void * __p[6];
+};
+
+union __anon_0x00007a43 {
+    int __i[6];
+    volatile int __vi[6];
+    volatile void * __p[6];
+};
+
+union __anon_0x000088c9 {
+    int __i[6];
+    volatile int __vi[6];
+    volatile void * __p[6];
+};
+
+union __anon_0x000096e1 {
+    int __i[6];
+    volatile int __vi[6];
+    volatile void * __p[6];
+};
+
+union __anon_0x0000a4d6 {
+    int __i[6];
+    volatile int __vi[6];
+    volatile void * __p[6];
+};
+
+union __anon_0x0000b296 {
+    int __i[6];
+    volatile int __vi[6];
+    volatile void * __p[6];
+};
+
+union __anon_0x0000c07f {
+    int __i[6];
+    volatile int __vi[6];
+    volatile void * __p[6];
+};
+
+union __anon_0x0000cfb7 {
+    int __i[6];
+    volatile int __vi[6];
+    volatile void * __p[6];
+};
+
+struct __anon_0x0000dc23 {
+    long unsigned int fds_bits[32];
+};
+
+union __anon_0x0000de34 {
+    int __i[6];
+    volatile int __vi[6];
+    volatile void * __p[6];
+};
+
+union __anon_0x0000ee7a {
+    int __i[6];
+    volatile int __vi[6];
+    volatile void * __p[6];
+};
+
+struct __anon_0x000105f5 {
+    unsigned int __attr;
+};
+
+union __anon_0x0001061d {
+    int __i[6];
+    volatile int __vi[6];
+    volatile void * __p[6];
+};
+
+union __anon_0x000117ae {
+    int __i[6];
+    volatile int __vi[6];
+    volatile void * __p[6];
+};
+
+union __anon_0x00012bc6 {
+    int __i[6];
+    volatile int __vi[6];
+    volatile void * __p[6];
+};
+
+union __anon_0x000143e5 {
+    int __i[6];
+    volatile int __vi[6];
+    volatile void * __p[6];
+};
+
+union __anon_0x00015331 {
+    int __i[6];
+    volatile int __vi[6];
+    volatile void * __p[6];
+};
+
+union __anon_0x00016ddd {
+    int __i[6];
+    volatile int __vi[6];
+    volatile void * __p[6];
+};
+
+union __anon_0x00017b47 {
+    int __i[6];
+    volatile int __vi[6];
+    volatile void * __p[6];
+};
+
+union __anon_0x00018af8 {
+    int __i[6];
+    volatile int __vi[6];
+    volatile void * __p[6];
+};
+
+union __anon_0x0001985c {
+    int __i[6];
+    volatile int __vi[6];
+    volatile void * __p[6];
+};
+
+union __anon_0x0001a824 {
+    int __i[6];
+    volatile int __vi[6];
+    volatile void * __p[6];
+};
+
+union __anon_0x0001b853 {
+    int __i[6];
+    volatile int __vi[6];
+    volatile void * __p[6];
+};
+
+union __anon_0x0001c67e {
+    int __i[6];
+    volatile int __vi[6];
+    volatile void * __p[6];
+};
+
+union __anon_0x0001d375 {
+    int __i[6];
+    volatile int __vi[6];
+    volatile void * __p[6];
+};
+
+union __anon_0x0001e3f4 {
+    int __i[6];
+    volatile int __vi[6];
+    volatile void * __p[6];
+};
+
+union __anon_0x0001f143 {
+    int __i[9];
+    volatile int __vi[9];
+    long unsigned int __s[9];
+};
+
+union __anon_0x0001f1cb {
+    int __i[6];
+    volatile int __vi[6];
+    volatile void * __p[6];
+};
+
+union __anon_0x00020432 {
+    int __i[6];
+    volatile int __vi[6];
+    volatile void * __p[6];
+};
+
+union __anon_0x00021633 {
+    int __i[6];
+    volatile int __vi[6];
+    volatile void * __p[6];
+};
+
+struct __sigset_t {
+    long unsigned int __bits[32];
+};
+
+struct __va_list {
+    void * __ap;
+};
+
+struct fbit_implication {
+    enum isa_feature ante;
+    enum isa_feature cons;
 };
 
 struct libmosquitto_tls {
@@ -447,153 +692,171 @@ struct will_delay_list {
     struct will_delay_list * next;
 };
 
-typedef struct asn1_string_st ASN1_BIT_STRING;
-typedef struct asn1_string_st ASN1_BMPSTRING;
-typedef int ASN1_BOOLEAN;
-typedef struct asn1_string_st ASN1_ENUMERATED;
-typedef struct asn1_string_st ASN1_GENERALIZEDTIME;
-typedef struct asn1_string_st ASN1_GENERALSTRING;
-typedef struct asn1_string_st ASN1_IA5STRING;
-typedef struct asn1_string_st ASN1_INTEGER;
-typedef struct asn1_object_st ASN1_OBJECT;
-typedef struct asn1_string_st ASN1_OCTET_STRING;
-typedef struct asn1_string_st ASN1_PRINTABLESTRING;
-typedef struct asn1_string_st ASN1_STRING;
-typedef struct asn1_string_st ASN1_T61STRING;
-typedef struct asn1_type_st ASN1_TYPE;
-typedef struct asn1_string_st ASN1_UNIVERSALSTRING;
-typedef struct asn1_string_st ASN1_UTCTIME;
-typedef struct asn1_string_st ASN1_UTF8STRING;
-typedef struct ASN1_VALUE_st ASN1_VALUE;
-typedef struct asn1_string_st ASN1_VISIBLESTRING;
-typedef struct bignum_st BIGNUM;
-typedef struct bio_st BIO;
-typedef struct EDIPartyName_st EDIPARTYNAME;
-typedef struct engine_st ENGINE;
-typedef struct evp_pkey_st EVP_PKEY;
 typedef struct _IO_FILE FILE;
-typedef struct GENERAL_NAME_st GENERAL_NAME;
-typedef struct ocsp_basic_response_st OCSP_BASICRESP;
-typedef struct ocsp_response_st OCSP_RESPONSE;
-typedef struct ocsp_single_response_st OCSP_SINGLERESP;
-typedef struct stack_st OPENSSL_STACK;
-typedef void (*OPENSSL_sk_freefunc)(void *);
-typedef struct otherName_st OTHERNAME;
-typedef struct ssl_st SSL;
-typedef struct ssl_ctx_st SSL_CTX;
-typedef struct ui_st UI;
-typedef struct ui_method_st UI_METHOD;
-typedef struct ui_string_st UI_STRING;
-typedef struct x509_st X509;
-typedef struct X509_name_st X509_NAME;
-typedef struct x509_store_st X509_STORE;
-typedef struct x509_store_ctx_st X509_STORE_CTX;
-typedef void _IO_lock_t;
-typedef long int __fd_mask;
-typedef int __int32_t;
-typedef signed char __int8_t;
-typedef unsigned int __mode_t;
-typedef long int __off64_t;
-typedef long int __off_t;
-typedef struct __pthread_internal_list __pthread_list_t;
-typedef void (*__sighandler_t)(int);
-typedef unsigned int __socklen_t;
-typedef long int __ssize_t;
-typedef long int __syscall_slong_t;
-typedef long int __time_t;
-typedef short unsigned int __uint16_t;
-typedef unsigned int __uint32_t;
-typedef unsigned char __uint8_t;
-typedef struct __anon_0x00014040 fd_set;
+typedef long long unsigned int UDItype;
+typedef unsigned int USItype;
+typedef struct __va_list __isoc_va_list;
+typedef int clockid_t;
+typedef struct __anon_0x0000dc23 fd_set;
+typedef int int32_t;
+typedef signed char int8_t;
+typedef unsigned int mode_t;
 typedef int mosq_sock_t;
 typedef struct mqtt5__property mosquitto_property;
-typedef union __anon_0x000001e7 pthread_mutex_t;
-typedef long unsigned int pthread_t;
+typedef struct __anon_0x0001f1a5 pthread_attr_t;
+typedef struct __anon_0x00000321 pthread_mutex_t;
+typedef struct __anon_0x000105f5 pthread_mutexattr_t;
+typedef struct __pthread * pthread_t;
 typedef short unsigned int sa_family_t;
-typedef long unsigned int size_t;
-typedef struct __va_list_tag __builtin_va_list[1];
-struct EDIPartyName_st {
-    ASN1_STRING * nameAssigner;
-    ASN1_STRING * partyName;
+typedef struct __sigset_t sigset_t;
+typedef unsigned int size_t;
+typedef unsigned int socklen_t;
+typedef int ssize_t;
+typedef long long int time_t;
+typedef short unsigned int uint16_t;
+typedef unsigned int uint32_t;
+typedef unsigned char uint8_t;
+typedef struct __va_list va_list;
+struct __anon_0x00000321 {
+    union __anon_0x000002b3 __u;
 };
 
-struct otherName_st {
-    ASN1_OBJECT * type_id;
-    ASN1_TYPE * value;
+struct __anon_0x00001594 {
+    union __anon_0x00001526 __u;
 };
 
-union __anon_0x0002fd67 {
-    char * ptr;
-    ASN1_BOOLEAN boolean;
-    ASN1_STRING * asn1_string;
-    ASN1_OBJECT * object;
-    ASN1_INTEGER * integer;
-    ASN1_ENUMERATED * enumerated;
-    ASN1_BIT_STRING * bit_string;
-    ASN1_OCTET_STRING * octet_string;
-    ASN1_PRINTABLESTRING * printablestring;
-    ASN1_T61STRING * t61string;
-    ASN1_IA5STRING * ia5string;
-    ASN1_GENERALSTRING * generalstring;
-    ASN1_BMPSTRING * bmpstring;
-    ASN1_UNIVERSALSTRING * universalstring;
-    ASN1_UTCTIME * utctime;
-    ASN1_GENERALIZEDTIME * generalizedtime;
-    ASN1_VISIBLESTRING * visiblestring;
-    ASN1_UTF8STRING * utf8string;
-    ASN1_STRING * set;
-    ASN1_STRING * sequence;
-    ASN1_VALUE * asn1_value;
+struct __anon_0x0000243a {
+    union __anon_0x000023c9 __u;
 };
 
-typedef void (*sk_GENERAL_NAME_freefunc)(GENERAL_NAME *);
-union __anon_0x0002ff9f {
-    char * ptr;
-    OTHERNAME * otherName;
-    ASN1_IA5STRING * rfc822Name;
-    ASN1_IA5STRING * dNSName;
-    ASN1_STRING * x400Address;
-    X509_NAME * directoryName;
-    EDIPARTYNAME * ediPartyName;
-    ASN1_IA5STRING * uniformResourceIdentifier;
-    ASN1_OCTET_STRING * iPAddress;
-    ASN1_OBJECT * registeredID;
-    ASN1_OCTET_STRING * ip;
-    X509_NAME * dirn;
-    ASN1_IA5STRING * ia5;
-    ASN1_OBJECT * rid;
-    ASN1_TYPE * other;
+struct __anon_0x0000361f {
+    union __anon_0x000035b1 __u;
 };
 
-struct __anon_0x00014040 {
-    __fd_mask fds_bits[16];
+struct __anon_0x000042c3 {
+    union __anon_0x00004252 __u;
 };
 
-typedef __int32_t int32_t;
-typedef __int8_t int8_t;
-typedef __mode_t mode_t;
-struct __pthread_mutex_s {
-    int __lock;
-    unsigned int __count;
-    int __owner;
-    unsigned int __nusers;
-    int __kind;
-    short int __spins;
-    short int __elision;
-    __pthread_list_t __list;
+struct __anon_0x0000531b {
+    union __anon_0x000052ad __u;
 };
 
-typedef __socklen_t socklen_t;
-typedef __ssize_t ssize_t;
-struct timespec {
-    __time_t tv_sec;
-    __syscall_slong_t tv_nsec;
+struct __anon_0x00005fdc {
+    union __anon_0x00005f6b __u;
 };
 
-typedef __time_t time_t;
-typedef __uint16_t uint16_t;
-typedef __uint32_t uint32_t;
-typedef __uint8_t uint8_t;
+struct __anon_0x00006cc3 {
+    union __anon_0x00006c52 __u;
+};
+
+struct __anon_0x00007ab4 {
+    union __anon_0x00007a43 __u;
+};
+
+struct __anon_0x0000893a {
+    union __anon_0x000088c9 __u;
+};
+
+struct __anon_0x00009752 {
+    union __anon_0x000096e1 __u;
+};
+
+struct __anon_0x0000a547 {
+    union __anon_0x0000a4d6 __u;
+};
+
+struct __anon_0x0000b307 {
+    union __anon_0x0000b296 __u;
+};
+
+struct __anon_0x0000c0ed {
+    union __anon_0x0000c07f __u;
+};
+
+struct __anon_0x0000d028 {
+    union __anon_0x0000cfb7 __u;
+};
+
+struct __anon_0x0000dea5 {
+    union __anon_0x0000de34 __u;
+};
+
+struct __anon_0x0000eeeb {
+    union __anon_0x0000ee7a __u;
+};
+
+struct __anon_0x0001068b {
+    union __anon_0x0001061d __u;
+};
+
+struct __anon_0x0001181f {
+    union __anon_0x000117ae __u;
+};
+
+struct __anon_0x00012c34 {
+    union __anon_0x00012bc6 __u;
+};
+
+struct __anon_0x00014456 {
+    union __anon_0x000143e5 __u;
+};
+
+struct __anon_0x0001539f {
+    union __anon_0x00015331 __u;
+};
+
+struct __anon_0x00016e4e {
+    union __anon_0x00016ddd __u;
+};
+
+struct __anon_0x00017bb8 {
+    union __anon_0x00017b47 __u;
+};
+
+struct __anon_0x00018b69 {
+    union __anon_0x00018af8 __u;
+};
+
+struct __anon_0x000198cd {
+    union __anon_0x0001985c __u;
+};
+
+struct __anon_0x0001a895 {
+    union __anon_0x0001a824 __u;
+};
+
+struct __anon_0x0001b8c4 {
+    union __anon_0x0001b853 __u;
+};
+
+struct __anon_0x0001c6ef {
+    union __anon_0x0001c67e __u;
+};
+
+struct __anon_0x0001d3e6 {
+    union __anon_0x0001d375 __u;
+};
+
+struct __anon_0x0001e462 {
+    union __anon_0x0001e3f4 __u;
+};
+
+struct __anon_0x0001f1a5 {
+    union __anon_0x0001f143 __u;
+};
+
+struct __anon_0x0001f23d {
+    union __anon_0x0001f1cb __u;
+};
+
+struct __anon_0x000204a3 {
+    union __anon_0x00020432 __u;
+};
+
+struct __anon_0x000216a1 {
+    union __anon_0x00021633 __u;
+};
+
 struct sockaddr {
     sa_family_t sa_family;
     char sa_data[14];
@@ -602,259 +865,6 @@ struct sockaddr {
 struct sockaddr_un {
     sa_family_t sun_family;
     char sun_path[108];
-};
-
-struct _IO_FILE {
-    int _flags;
-    char * _IO_read_ptr;
-    char * _IO_read_end;
-    char * _IO_read_base;
-    char * _IO_write_base;
-    char * _IO_write_ptr;
-    char * _IO_write_end;
-    char * _IO_buf_base;
-    char * _IO_buf_end;
-    char * _IO_save_base;
-    char * _IO_backup_base;
-    char * _IO_save_end;
-    struct _IO_marker * _markers;
-    struct _IO_FILE * _chain;
-    int _fileno;
-    int _flags2;
-    __off_t _old_offset;
-    short unsigned int _cur_column;
-    signed char _vtable_offset;
-    char _shortbuf[1];
-    _IO_lock_t * _lock;
-    __off64_t _offset;
-    struct _IO_codecvt * _codecvt;
-    struct _IO_wide_data * _wide_data;
-    struct _IO_FILE * _freeres_list;
-    void * _freeres_buf;
-    size_t __pad5;
-    int _mode;
-    char _unused2[20];
-};
-
-typedef __builtin_va_list __gnuc_va_list;
-struct asn1_type_st {
-    int type;
-    union __anon_0x0002fd67 value;
-};
-
-struct GENERAL_NAME_st {
-    int type;
-    union __anon_0x0002ff9f d;
-};
-
-union __anon_0x000001e7 {
-    struct __pthread_mutex_s __data;
-    char __size[40];
-    long int __align;
-};
-
-union __anon_0x00001e5a {
-    struct __pthread_mutex_s __data;
-    char __size[40];
-    long int __align;
-};
-
-union __anon_0x00003a40 {
-    struct __pthread_mutex_s __data;
-    char __size[40];
-    long int __align;
-};
-
-union __anon_0x00004f2d {
-    struct __pthread_mutex_s __data;
-    char __size[40];
-    long int __align;
-};
-
-union __anon_0x00006b74 {
-    struct __pthread_mutex_s __data;
-    char __size[40];
-    long int __align;
-};
-
-union __anon_0x00007af2 {
-    struct __pthread_mutex_s __data;
-    char __size[40];
-    long int __align;
-};
-
-union __anon_0x0000904d {
-    struct __pthread_mutex_s __data;
-    char __size[40];
-    long int __align;
-};
-
-union __anon_0x0000a015 {
-    struct __pthread_mutex_s __data;
-    char __size[40];
-    long int __align;
-};
-
-union __anon_0x0000b088 {
-    struct __pthread_mutex_s __data;
-    char __size[40];
-    long int __align;
-};
-
-union __anon_0x0000c291 {
-    struct __pthread_mutex_s __data;
-    char __size[40];
-    long int __align;
-};
-
-union __anon_0x0000d5c2 {
-    struct __pthread_mutex_s __data;
-    char __size[40];
-    long int __align;
-};
-
-union __anon_0x0000e7c6 {
-    struct __pthread_mutex_s __data;
-    char __size[40];
-    long int __align;
-};
-
-union __anon_0x0000f977 {
-    struct __pthread_mutex_s __data;
-    char __size[40];
-    long int __align;
-};
-
-union __anon_0x00010b10 {
-    struct __pthread_mutex_s __data;
-    char __size[40];
-    long int __align;
-};
-
-union __anon_0x00011c2c {
-    struct __pthread_mutex_s __data;
-    char __size[40];
-    long int __align;
-};
-
-union __anon_0x00013186 {
-    struct __pthread_mutex_s __data;
-    char __size[40];
-    long int __align;
-};
-
-union __anon_0x0001430d {
-    struct __pthread_mutex_s __data;
-    char __size[40];
-    long int __align;
-};
-
-union __anon_0x00015d1c {
-    struct __pthread_mutex_s __data;
-    char __size[40];
-    long int __align;
-};
-
-union __anon_0x000183a9 {
-    struct __pthread_mutex_s __data;
-    char __size[40];
-    long int __align;
-};
-
-union __anon_0x00019751 {
-    struct __pthread_mutex_s __data;
-    char __size[40];
-    long int __align;
-};
-
-union __anon_0x0001cb9c {
-    struct __pthread_mutex_s __data;
-    char __size[40];
-    long int __align;
-};
-
-union __anon_0x0001f5eb {
-    struct __pthread_mutex_s __data;
-    char __size[40];
-    long int __align;
-};
-
-union __anon_0x00023154 {
-    struct __pthread_mutex_s __data;
-    char __size[40];
-    long int __align;
-};
-
-union __anon_0x000241e7 {
-    struct __pthread_mutex_s __data;
-    char __size[40];
-    long int __align;
-};
-
-union __anon_0x00025822 {
-    struct __pthread_mutex_s __data;
-    char __size[40];
-    long int __align;
-};
-
-union __anon_0x000268ce {
-    struct __pthread_mutex_s __data;
-    char __size[40];
-    long int __align;
-};
-
-union __anon_0x00028091 {
-    struct __pthread_mutex_s __data;
-    char __size[40];
-    long int __align;
-};
-
-union __anon_0x00029685 {
-    struct __pthread_mutex_s __data;
-    char __size[40];
-    long int __align;
-};
-
-union __anon_0x0002a8cc {
-    struct __pthread_mutex_s __data;
-    char __size[40];
-    long int __align;
-};
-
-union __anon_0x0002b908 {
-    struct __pthread_mutex_s __data;
-    char __size[40];
-    long int __align;
-};
-
-union __anon_0x0002d430 {
-    struct __pthread_mutex_s __data;
-    char __size[40];
-    long int __align;
-};
-
-union __anon_0x0002e60b {
-    struct __pthread_mutex_s __data;
-    char __size[40];
-    long int __align;
-};
-
-union __anon_0x0002f818 {
-    struct __pthread_mutex_s __data;
-    char __size[40];
-    long int __align;
-};
-
-union __anon_0x00031675 {
-    struct __pthread_mutex_s __data;
-    char __size[40];
-    long int __align;
-};
-
-union __anon_0x000332ad {
-    struct __pthread_mutex_s __data;
-    char __size[40];
-    long int __align;
 };
 
 struct addrinfo {
@@ -866,6 +876,11 @@ struct addrinfo {
     struct sockaddr * ai_addr;
     char * ai_canonname;
     struct addrinfo * ai_next;
+};
+
+struct timespec {
+    time_t tv_sec;
+    long int tv_nsec;
 };
 
 struct mosquitto__alias {
@@ -891,22 +906,16 @@ struct mosquitto_message_all {
 };
 
 typedef uint32_t in_addr_t;
-union __anon_0x00019b67 {
-    uint8_t __u6_addr8[16];
-    uint16_t __u6_addr16[8];
-    uint32_t __u6_addr32[4];
+union __anon_0x0001163e {
+    uint8_t __s6_addr[16];
+    uint16_t __s6_addr16[8];
+    uint32_t __s6_addr32[4];
 };
 
-union __anon_0x0002bbf6 {
-    uint8_t __u6_addr8[16];
-    uint16_t __u6_addr16[8];
-    uint32_t __u6_addr32[4];
-};
-
-union __anon_0x0002fb06 {
-    uint8_t __u6_addr8[16];
-    uint16_t __u6_addr16[8];
-    uint32_t __u6_addr32[4];
+union __anon_0x0001d2cb {
+    uint8_t __s6_addr[16];
+    uint16_t __s6_addr16[8];
+    uint32_t __s6_addr32[4];
 };
 
 struct mosquitto__packet {
@@ -922,7 +931,6 @@ struct mosquitto__packet {
     int8_t remaining_count;
 };
 
-typedef __gnuc_va_list va_list;
 struct mosquitto_msg_data {
     struct mosquitto_message_all * inflight;
     int queue_len;
@@ -931,7 +939,7 @@ struct mosquitto_msg_data {
     uint16_t inflight_maximum;
 };
 
-union __anon_0x0000298e {
+union __anon_0x00000c71 {
     uint8_t i8;
     uint16_t i16;
     uint32_t i32;
@@ -940,7 +948,7 @@ union __anon_0x0000298e {
     struct mqtt__string s;
 };
 
-union __anon_0x00005980 {
+union __anon_0x00002cba {
     uint8_t i8;
     uint16_t i16;
     uint32_t i32;
@@ -949,7 +957,7 @@ union __anon_0x00005980 {
     struct mqtt__string s;
 };
 
-union __anon_0x000075c7 {
+union __anon_0x00003e98 {
     uint8_t i8;
     uint16_t i16;
     uint32_t i32;
@@ -958,7 +966,7 @@ union __anon_0x000075c7 {
     struct mqtt__string s;
 };
 
-union __anon_0x00008758 {
+union __anon_0x00004d48 {
     uint8_t i8;
     uint16_t i16;
     uint32_t i32;
@@ -967,7 +975,7 @@ union __anon_0x00008758 {
     struct mqtt__string s;
 };
 
-union __anon_0x00009aa0 {
+union __anon_0x00005b94 {
     uint8_t i8;
     uint16_t i16;
     uint32_t i32;
@@ -976,7 +984,7 @@ union __anon_0x00009aa0 {
     struct mqtt__string s;
 };
 
-union __anon_0x0000aa68 {
+union __anon_0x00006855 {
     uint8_t i8;
     uint16_t i16;
     uint32_t i32;
@@ -985,7 +993,7 @@ union __anon_0x0000aa68 {
     struct mqtt__string s;
 };
 
-union __anon_0x0000bafa {
+union __anon_0x00007559 {
     uint8_t i8;
     uint16_t i16;
     uint32_t i32;
@@ -994,7 +1002,7 @@ union __anon_0x0000bafa {
     struct mqtt__string s;
 };
 
-union __anon_0x0000cd03 {
+union __anon_0x00008351 {
     uint8_t i8;
     uint16_t i16;
     uint32_t i32;
@@ -1003,7 +1011,7 @@ union __anon_0x0000cd03 {
     struct mqtt__string s;
 };
 
-union __anon_0x0000e034 {
+union __anon_0x000091d0 {
     uint8_t i8;
     uint16_t i16;
     uint32_t i32;
@@ -1012,7 +1020,7 @@ union __anon_0x0000e034 {
     struct mqtt__string s;
 };
 
-union __anon_0x0000f238 {
+union __anon_0x00009fe8 {
     uint8_t i8;
     uint16_t i16;
     uint32_t i32;
@@ -1021,7 +1029,7 @@ union __anon_0x0000f238 {
     struct mqtt__string s;
 };
 
-union __anon_0x000103d0 {
+union __anon_0x0000adc7 {
     uint8_t i8;
     uint16_t i16;
     uint32_t i32;
@@ -1030,7 +1038,7 @@ union __anon_0x000103d0 {
     struct mqtt__string s;
 };
 
-union __anon_0x00011563 {
+union __anon_0x0000bb80 {
     uint8_t i8;
     uint16_t i16;
     uint32_t i32;
@@ -1039,7 +1047,7 @@ union __anon_0x00011563 {
     struct mqtt__string s;
 };
 
-union __anon_0x000169f1 {
+union __anon_0x0000f9fc {
     uint8_t i8;
     uint16_t i16;
     uint32_t i32;
@@ -1048,7 +1056,7 @@ union __anon_0x000169f1 {
     struct mqtt__string s;
 };
 
-union __anon_0x00020e37 {
+union __anon_0x00015d06 {
     uint8_t i8;
     uint16_t i16;
     uint32_t i32;
@@ -1057,7 +1065,7 @@ union __anon_0x00020e37 {
     struct mqtt__string s;
 };
 
-union __anon_0x00023ba7 {
+union __anon_0x000176c7 {
     uint8_t i8;
     uint16_t i16;
     uint32_t i32;
@@ -1066,7 +1074,7 @@ union __anon_0x00023ba7 {
     struct mqtt__string s;
 };
 
-union __anon_0x00024cef {
+union __anon_0x000184e4 {
     uint8_t i8;
     uint16_t i16;
     uint32_t i32;
@@ -1075,7 +1083,7 @@ union __anon_0x00024cef {
     struct mqtt__string s;
 };
 
-union __anon_0x00026275 {
+union __anon_0x000193e9 {
     uint8_t i8;
     uint16_t i16;
     uint32_t i32;
@@ -1084,7 +1092,7 @@ union __anon_0x00026275 {
     struct mqtt__string s;
 };
 
-union __anon_0x00027321 {
+union __anon_0x0001a146 {
     uint8_t i8;
     uint16_t i16;
     uint32_t i32;
@@ -1093,7 +1101,7 @@ union __anon_0x00027321 {
     struct mqtt__string s;
 };
 
-union __anon_0x00028ba0 {
+union __anon_0x0001b1c8 {
     uint8_t i8;
     uint16_t i16;
     uint32_t i32;
@@ -1102,7 +1110,7 @@ union __anon_0x00028ba0 {
     struct mqtt__string s;
 };
 
-union __anon_0x0002a0de {
+union __anon_0x0001c144 {
     uint8_t i8;
     uint16_t i16;
     uint32_t i32;
@@ -1111,7 +1119,7 @@ union __anon_0x0002a0de {
     struct mqtt__string s;
 };
 
-union __anon_0x0002b325 {
+union __anon_0x0001cf68 {
     uint8_t i8;
     uint16_t i16;
     uint32_t i32;
@@ -1120,7 +1128,7 @@ union __anon_0x0002b325 {
     struct mqtt__string s;
 };
 
-union __anon_0x0002c866 {
+union __anon_0x0001de1c {
     uint8_t i8;
     uint16_t i16;
     uint32_t i32;
@@ -1129,7 +1137,7 @@ union __anon_0x0002c866 {
     struct mqtt__string s;
 };
 
-union __anon_0x00032297 {
+union __anon_0x00020d1c {
     uint8_t i8;
     uint16_t i16;
     uint32_t i32;
@@ -1138,7 +1146,7 @@ union __anon_0x00032297 {
     struct mqtt__string s;
 };
 
-union __anon_0x00033d07 {
+union __anon_0x00021f1a {
     uint8_t i8;
     uint16_t i16;
     uint32_t i32;
@@ -1152,7 +1160,7 @@ struct in_addr {
 };
 
 struct in6_addr {
-    union __anon_0x00019b67 __in6_u;
+    union __anon_0x0001163e __in6_union;
 };
 
 struct mosquitto {
@@ -1180,26 +1188,6 @@ struct mosquitto {
     int alias_count;
     uint32_t will_delay_interval;
     time_t will_delay_time;
-    SSL * ssl;
-    SSL_CTX * ssl_ctx;
-    char * tls_cafile;
-    char * tls_capath;
-    char * tls_certfile;
-    char * tls_keyfile;
-    int (*tls_pw_callback)(char *, int, int, void *);
-    char * tls_version;
-    char * tls_ciphers;
-    char * tls_psk;
-    char * tls_psk_identity;
-    char * tls_engine;
-    char * tls_engine_kpass_sha1;
-    char * tls_alpn;
-    int tls_cert_reqs;
-    _Bool tls_insecure;
-    _Bool ssl_ctx_defaults;
-    _Bool tls_ocsp_required;
-    _Bool tls_use_os_certs;
-    enum mosquitto__keyform tls_keyform;
     _Bool want_write;
     _Bool want_connect;
     pthread_mutex_t callback_mutex;
@@ -1254,7 +1242,7 @@ struct mosquitto {
 
 struct mqtt5__property {
     struct mqtt5__property * next;
-    union __anon_0x0000298e value;
+    union __anon_0x00000c71 value;
     struct mqtt__string name;
     int32_t identifier;
     _Bool client_generated;
@@ -1264,7 +1252,7 @@ struct sockaddr_in {
     sa_family_t sin_family;
     in_port_t sin_port;
     struct in_addr sin_addr;
-    unsigned char sin_zero[8];
+    uint8_t sin_zero[8];
 };
 
 struct sockaddr_in6 {
@@ -1278,18 +1266,57 @@ struct sockaddr_in6 {
 
 /* ── exported function declarations ──────────────────────── */
 
+extern void *_fini(/* signature unavailable */);
+extern void *_init(/* signature unavailable */);
+extern void do_client_disconnect(struct mosquitto *, int, const mosquitto_property *);
+extern char * fgets_extending(char * * buf, int * buflen, FILE * stream);
+extern int handle__auth(struct mosquitto *);
+extern int handle__connack(struct mosquitto *);
+extern int handle__disconnect(struct mosquitto *);
+extern int handle__packet(struct mosquitto * mosq);
+extern int handle__pingreq(struct mosquitto *);
+extern int handle__pingresp(struct mosquitto *);
+extern int handle__pubackcomp(struct mosquitto *, const char *);
+extern int handle__publish(struct mosquitto *);
+extern int handle__pubrec(struct mosquitto *);
+extern int handle__pubrel(struct mosquitto *);
+extern int handle__suback(struct mosquitto *);
+extern int handle__unsuback(struct mosquitto *);
+extern int log__printf(struct mosquitto *, unsigned int, const char *, ...);
+extern void message__cleanup(struct mosquitto_message_all * * message);
+extern void message__cleanup_all(struct mosquitto *);
+extern int message__delete(struct mosquitto * mosq, uint16_t mid, enum mosquitto_msg_direction dir, int qos);
+extern int message__out_update(struct mosquitto * mosq, uint16_t mid, enum mosquitto_msg_state state, int qos);
+extern int message__queue(struct mosquitto * mosq, struct mosquitto_message_all * message, enum mosquitto_msg_direction dir);
+extern void message__reconnect_reset(struct mosquitto * mosq);
+extern int message__release_to_inflight(struct mosquitto * mosq, enum mosquitto_msg_direction dir);
+extern int message__remove(struct mosquitto * mosq, uint16_t mid, enum mosquitto_msg_direction dir, struct mosquitto_message_all * * message, int qos);
+extern void message__retry_check(struct mosquitto * mosq);
+extern char * misc__trimblanks(char * str);
+extern void * mosquitto__calloc(size_t, size_t);
+extern int mosquitto__check_keepalive(struct mosquitto * mosq);
+extern void mosquitto__destroy(struct mosquitto * mosq);
+extern FILE * mosquitto__fopen(const char * path, const char * mode, _Bool restrict_read);
+extern void mosquitto__free(void *);
+extern enum mosquitto_client_state mosquitto__get_state(struct mosquitto * mosq);
+extern void * mosquitto__malloc(size_t);
+extern uint16_t mosquitto__mid_generate(struct mosquitto * mosq);
+extern void * mosquitto__realloc(void *, size_t);
+extern int mosquitto__set_state(struct mosquitto * mosq, enum mosquitto_client_state state);
+extern char * mosquitto__strdup(const char *);
+extern void * mosquitto__thread_main(void * obj);
 extern const char * mosquitto_connack_string(int connack_code);
-extern void mosquitto_connect(void);
+extern int mosquitto_connect(struct mosquitto *, const char *, int, int);
 extern int mosquitto_connect_async(struct mosquitto * mosq, const char * host, int port, int keepalive);
 extern int mosquitto_connect_bind(struct mosquitto * mosq, const char * host, int port, int keepalive, const char * bind_address);
 extern int mosquitto_connect_bind_async(struct mosquitto * mosq, const char * host, int port, int keepalive, const char * bind_address);
 extern int mosquitto_connect_bind_v5(struct mosquitto * mosq, const char * host, int port, int keepalive, const char * bind_address, const mosquitto_property * properties);
-extern void mosquitto_connect_callback_set(void);
+extern void mosquitto_connect_callback_set(struct mosquitto *, void (*)(struct mosquitto *, void *, int));
 extern int mosquitto_connect_srv(struct mosquitto * mosq, const char * host, int keepalive, const char * bind_address);
 extern void mosquitto_connect_v5_callback_set(struct mosquitto * mosq, void (*on_connect)(struct mosquitto *, void *, int, int, const mosquitto_property *));
 extern void mosquitto_connect_with_flags_callback_set(struct mosquitto * mosq, void (*on_connect)(struct mosquitto *, void *, int, int));
-extern void mosquitto_destroy(void);
-extern void mosquitto_disconnect(void);
+extern void mosquitto_destroy(struct mosquitto * mosq);
+extern int mosquitto_disconnect(struct mosquitto *);
 extern void mosquitto_disconnect_callback_set(struct mosquitto * mosq, void (*on_disconnect)(struct mosquitto *, void *, int));
 extern int mosquitto_disconnect_v5(struct mosquitto * mosq, int reason_code, const mosquitto_property * properties);
 extern void mosquitto_disconnect_v5_callback_set(struct mosquitto * mosq, void (*on_disconnect)(struct mosquitto *, void *, int, const mosquitto_property *));
@@ -1299,50 +1326,50 @@ extern int mosquitto_lib_init(void);
 extern int mosquitto_lib_version(int * major, int * minor, int * revision);
 extern void mosquitto_log_callback_set(struct mosquitto * mosq, void (*on_log)(struct mosquitto *, void *, int, const char *));
 extern int mosquitto_loop(struct mosquitto * mosq, int timeout, int max_packets);
-extern void mosquitto_loop_forever(void);
+extern int mosquitto_loop_forever(struct mosquitto *, int, int);
 extern int mosquitto_loop_misc(struct mosquitto * mosq);
 extern int mosquitto_loop_read(struct mosquitto * mosq, int max_packets);
 extern int mosquitto_loop_start(struct mosquitto * mosq);
 extern int mosquitto_loop_stop(struct mosquitto * mosq, _Bool force);
 extern int mosquitto_loop_write(struct mosquitto * mosq, int max_packets);
 extern int mosquitto_max_inflight_messages_set(struct mosquitto * mosq, unsigned int max_inflight_messages);
-extern void mosquitto_message_callback_set(void);
+extern void mosquitto_message_callback_set(struct mosquitto *, void (*)(struct mosquitto *, void *, const struct mosquitto_message *));
 extern int mosquitto_message_copy(struct mosquitto_message * dst, const struct mosquitto_message * src);
 extern void mosquitto_message_free(struct mosquitto_message * * message);
 extern void mosquitto_message_free_contents(struct mosquitto_message * message);
 extern void mosquitto_message_retry_set(struct mosquitto * mosq, unsigned int message_retry);
 extern void mosquitto_message_v5_callback_set(struct mosquitto * mosq, void (*on_message)(struct mosquitto *, void *, const struct mosquitto_message *, const mosquitto_property *));
-extern void mosquitto_new(void);
+extern struct mosquitto * mosquitto_new(const char * id, _Bool clean_start, void * userdata);
 extern int mosquitto_opts_set(struct mosquitto * mosq, enum mosq_opt_t option, void * value);
 extern int mosquitto_property_add_binary(mosquitto_property * * proplist, int identifier, const void * value, uint16_t len);
 extern int mosquitto_property_add_byte(mosquitto_property * * proplist, int identifier, uint8_t value);
-extern void mosquitto_property_add_int16(void);
+extern int mosquitto_property_add_int16(mosquitto_property * *, int, uint16_t);
 extern int mosquitto_property_add_int32(mosquitto_property * * proplist, int identifier, uint32_t value);
 extern int mosquitto_property_add_string(mosquitto_property * * proplist, int identifier, const char * value);
 extern int mosquitto_property_add_string_pair(mosquitto_property * * proplist, int identifier, const char * name, const char * value);
 extern int mosquitto_property_add_varint(mosquitto_property * * proplist, int identifier, uint32_t value);
 extern int mosquitto_property_check_all(int command, const mosquitto_property * properties);
-extern void mosquitto_property_check_command(void);
+extern int mosquitto_property_check_command(int, int);
 extern int mosquitto_property_copy_all(mosquitto_property * * dest, const mosquitto_property * src);
-extern void mosquitto_property_free_all(void);
+extern void mosquitto_property_free_all(mosquitto_property * *);
 extern int mosquitto_property_identifier(const mosquitto_property * property);
 extern const char * mosquitto_property_identifier_to_string(int identifier);
 extern const mosquitto_property * mosquitto_property_next(const mosquitto_property * proplist);
 extern const mosquitto_property * mosquitto_property_read_binary(const mosquitto_property * proplist, int identifier, void * * value, uint16_t * len, _Bool skip_first);
 extern const mosquitto_property * mosquitto_property_read_byte(const mosquitto_property * proplist, int identifier, uint8_t * value, _Bool skip_first);
-extern void mosquitto_property_read_int16(void);
+extern const mosquitto_property * mosquitto_property_read_int16(const mosquitto_property *, int, uint16_t *, _Bool);
 extern const mosquitto_property * mosquitto_property_read_int32(const mosquitto_property * proplist, int identifier, uint32_t * value, _Bool skip_first);
 extern const mosquitto_property * mosquitto_property_read_string(const mosquitto_property * proplist, int identifier, char * * value, _Bool skip_first);
 extern const mosquitto_property * mosquitto_property_read_string_pair(const mosquitto_property * proplist, int identifier, char * * name, char * * value, _Bool skip_first);
 extern const mosquitto_property * mosquitto_property_read_varint(const mosquitto_property * proplist, int identifier, uint32_t * value, _Bool skip_first);
-extern void mosquitto_pub_topic_check(void);
+extern int mosquitto_pub_topic_check(const char *);
 extern int mosquitto_pub_topic_check2(const char * str, size_t len);
 extern int mosquitto_publish(struct mosquitto * mosq, int * mid, const char * topic, int payloadlen, const void * payload, int qos, _Bool retain);
 extern void mosquitto_publish_callback_set(struct mosquitto * mosq, void (*on_publish)(struct mosquitto *, void *, int));
 extern int mosquitto_publish_v5(struct mosquitto * mosq, int * mid, const char * topic, int payloadlen, const void * payload, int qos, _Bool retain, const mosquitto_property * properties);
 extern void mosquitto_publish_v5_callback_set(struct mosquitto * mosq, void (*on_publish)(struct mosquitto *, void *, int, int, const mosquitto_property *));
 extern const char * mosquitto_reason_string(int reason_code);
-extern void mosquitto_reconnect(void);
+extern int mosquitto_reconnect(struct mosquitto *);
 extern int mosquitto_reconnect_async(struct mosquitto * mosq);
 extern int mosquitto_reconnect_delay_set(struct mosquitto * mosq, unsigned int reconnect_delay, unsigned int reconnect_delay_max, _Bool reconnect_exponential_backoff);
 extern int mosquitto_reinitialise(struct mosquitto * mosq, const char * id, _Bool clean_start, void * userdata);
@@ -1357,7 +1384,7 @@ extern int mosquitto_sub_topic_check(const char * str);
 extern int mosquitto_sub_topic_check2(const char * str, size_t len);
 extern int mosquitto_sub_topic_tokenise(const char * subtopic, char * * * topics, int * count);
 extern int mosquitto_sub_topic_tokens_free(char * * * topics, int count);
-extern void mosquitto_subscribe(void);
+extern int mosquitto_subscribe(struct mosquitto *, int *, const char *, int);
 extern int mosquitto_subscribe_callback(int (*callback)(struct mosquitto *, void *, const struct mosquitto_message *), void * userdata, const char * topic, int qos, const char * host, int port, const char * client_id, int keepalive, _Bool clean_session, const char * username, const char * password, const struct libmosquitto_will * will, const struct libmosquitto_tls * tls);
 extern void mosquitto_subscribe_callback_set(struct mosquitto * mosq, void (*on_subscribe)(struct mosquitto *, void *, int, int, const int *));
 extern int mosquitto_subscribe_multiple(struct mosquitto * mosq, int * mid, int sub_count, const char * * sub, int qos, int options, const mosquitto_property * properties);
@@ -1365,6 +1392,7 @@ extern int mosquitto_subscribe_simple(struct mosquitto_message * * messages, int
 extern int mosquitto_subscribe_v5(struct mosquitto * mosq, int * mid, const char * sub, int qos, int options, const mosquitto_property * properties);
 extern void mosquitto_subscribe_v5_callback_set(struct mosquitto * mosq, void (*on_subscribe)(struct mosquitto *, void *, int, int, const int *, const mosquitto_property *));
 extern int mosquitto_threaded_set(struct mosquitto * mosq, _Bool threaded);
+extern time_t mosquitto_time(void);
 extern int mosquitto_tls_insecure_set(struct mosquitto * mosq, _Bool value);
 extern int mosquitto_tls_opts_set(struct mosquitto * mosq, int cert_reqs, const char * tls_version, const char * ciphers);
 extern int mosquitto_tls_psk_set(struct mosquitto * mosq, const char * psk, const char * identity, const char * ciphers);
@@ -1379,15 +1407,79 @@ extern void mosquitto_unsubscribe_v5_callback_set(struct mosquitto * mosq, void 
 extern void mosquitto_user_data_set(struct mosquitto * mosq, void * userdata);
 extern void * mosquitto_userdata(struct mosquitto * mosq);
 extern int mosquitto_username_pw_set(struct mosquitto * mosq, const char * username, const char * password);
-extern void mosquitto_validate_utf8(void);
+extern int mosquitto_validate_utf8(const char *, int);
 extern int mosquitto_void_option(struct mosquitto * mosq, enum mosq_opt_t option, void * value);
 extern _Bool mosquitto_want_write(struct mosquitto * mosq);
 extern int mosquitto_will_clear(struct mosquitto * mosq);
 extern int mosquitto_will_set(struct mosquitto * mosq, const char * topic, int payloadlen, const void * payload, int qos, _Bool retain);
 extern int mosquitto_will_set_v5(struct mosquitto * mosq, const char * topic, int payloadlen, const void * payload, int qos, _Bool retain, mosquitto_property * properties);
+extern void net__cleanup(void);
+extern int net__init(void);
+extern ssize_t net__read(struct mosquitto *, void *, size_t);
+extern int net__socket_close(struct mosquitto *);
+extern int net__socket_connect(struct mosquitto * mosq, const char * host, uint16_t port, const char * bind_address, _Bool blocking);
+extern int net__socket_connect_step3(struct mosquitto *, const char *);
+extern int net__socket_nonblock(mosq_sock_t * sock);
+extern int net__socketpair(mosq_sock_t * pairR, mosq_sock_t * pairW);
+extern int net__try_connect(const char * host, uint16_t port, mosq_sock_t * sock, const char * bind_address, _Bool blocking);
+extern ssize_t net__write(struct mosquitto *, const void *, size_t);
+extern int packet__alloc(struct mosquitto__packet *);
+extern int packet__check_oversize(struct mosquitto *, uint32_t);
+extern void packet__cleanup(struct mosquitto__packet *);
+extern void packet__cleanup_all(struct mosquitto * mosq);
+extern void packet__cleanup_all_no_locks(struct mosquitto * mosq);
+extern int packet__queue(struct mosquitto *, struct mosquitto__packet *);
+extern int packet__read(struct mosquitto *);
+extern int packet__read_binary(struct mosquitto__packet *, uint8_t * *, uint16_t *);
+extern int packet__read_byte(struct mosquitto__packet *, uint8_t *);
+extern int packet__read_bytes(struct mosquitto__packet * packet, void * bytes, uint32_t count);
+extern int packet__read_string(struct mosquitto__packet *, char * *, uint16_t *);
+extern int packet__read_uint16(struct mosquitto__packet *, uint16_t *);
+extern int packet__read_uint32(struct mosquitto__packet *, uint32_t *);
+extern int packet__read_varint(struct mosquitto__packet *, uint32_t *, uint8_t *);
+extern unsigned int packet__varint_bytes(uint32_t);
+extern int packet__write(struct mosquitto * mosq);
+extern void packet__write_byte(struct mosquitto__packet *, uint8_t);
+extern void packet__write_bytes(struct mosquitto__packet *, const void *, uint32_t);
+extern void packet__write_string(struct mosquitto__packet *, const char *, uint16_t);
+extern void packet__write_uint16(struct mosquitto__packet *, uint16_t);
+extern void packet__write_uint32(struct mosquitto__packet *, uint32_t);
+extern int packet__write_varint(struct mosquitto__packet *, uint32_t);
+extern void property__free(mosquitto_property * * property);
+extern unsigned int property__get_length(const mosquitto_property * property);
+extern unsigned int property__get_length_all(const mosquitto_property *);
+extern const mosquitto_property * property__get_property(const mosquitto_property * proplist, int identifier, _Bool skip_first);
+extern unsigned int property__get_remaining_length(const mosquitto_property *);
+extern int property__read(struct mosquitto__packet * packet, uint32_t * len, mosquitto_property * property);
+extern int property__read_all(int command, struct mosquitto__packet * packet, mosquitto_property * * properties);
+extern int property__write(struct mosquitto__packet * packet, const mosquitto_property * property);
+extern int property__write_all(struct mosquitto__packet *, const mosquitto_property *, _Bool);
+extern int send__command_with_mid(struct mosquitto * mosq, uint8_t command, uint16_t mid, _Bool dup, uint8_t reason_code, const mosquitto_property * properties);
+extern int send__connect(struct mosquitto *, uint16_t, _Bool, const mosquitto_property *);
+extern int send__disconnect(struct mosquitto * mosq, uint8_t reason_code, const mosquitto_property * properties);
+extern int send__pingreq(struct mosquitto *);
+extern int send__pingresp(struct mosquitto * mosq);
+extern int send__puback(struct mosquitto * mosq, uint16_t mid, uint8_t reason_code, const mosquitto_property * properties);
+extern int send__pubcomp(struct mosquitto * mosq, uint16_t mid, const mosquitto_property * properties);
+extern int send__publish(struct mosquitto * mosq, uint16_t mid, const char * topic, uint32_t payloadlen, const void * payload, uint8_t qos, _Bool retain, _Bool dup, const mosquitto_property * cmsg_props, const mosquitto_property * store_props, uint32_t expiry_interval);
+extern int send__pubrec(struct mosquitto * mosq, uint16_t mid, uint8_t reason_code, const mosquitto_property * properties);
+extern int send__pubrel(struct mosquitto * mosq, uint16_t mid, const mosquitto_property * properties);
+extern int send__real_publish(struct mosquitto * mosq, uint16_t mid, const char * topic, uint32_t payloadlen, const void * payload, uint8_t qos, _Bool retain, _Bool dup, const mosquitto_property * cmsg_props, const mosquitto_property * store_props, uint32_t expiry_interval);
+extern int send__simple_command(struct mosquitto * mosq, uint8_t command);
+extern int send__subscribe(struct mosquitto * mosq, int * mid, int topic_count, const char * * topic, int topic_qos, const mosquitto_property * properties);
+extern int send__unsubscribe(struct mosquitto * mosq, int * mid, int topic_count, const char * * topic, const mosquitto_property * properties);
+extern int socks5__read(struct mosquitto * mosq);
+extern int socks5__send(struct mosquitto * mosq);
+extern void util__decrement_receive_quota(struct mosquitto * mosq);
+extern void util__decrement_send_quota(struct mosquitto * mosq);
+extern void util__increment_receive_quota(struct mosquitto * mosq);
+extern void util__increment_send_quota(struct mosquitto * mosq);
+extern int util__random_bytes(void * bytes, int count);
+extern int will__clear(struct mosquitto * mosq);
+extern int will__set(struct mosquitto * mosq, const char * topic, int payloadlen, const void * payload, int qos, _Bool retain, mosquitto_property * properties);
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif /* LIBMOSQUITTO_SO_2_0_9_H */
+#endif /* LIBMOSQUITTO_SO_2_0_10_H */
